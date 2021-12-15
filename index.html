@@ -10,15 +10,20 @@
         body {
             background-color: #1B1B1B;
         }
-        .menu_g {
-            display: flex;
-            justify-content: space-between;
+        .menu_g{
+            text-decoration: none;
+            color: white;
+        }
+        .menu_g:hover{
+            background-color: aqua;
+            color:#1B1B1B
         }
         ul {
             list-style: none;
             padding: 0;
             margin: 0;
         }
+        
     </style>
 </head>
 <body>
@@ -41,9 +46,9 @@
                 >
                 <span class="navbar-toggler-icon"></span>
                 </button>
-            <div class="col-8 d-flex align-items-center">
+            <div class="col-8 d-flex">
             <div class="collapse navbar-collapse" id="Cmenu">
-                <ul class="navbar-nav menu_g">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item"><a href="#" class="nav-link">Inicio</a></li>
                     <li class="nav-item"><a href="#" class="nav-link">Perfil Medico</a></li>
                     <li class="nav-item"><a href="#" class="nav-link">Nosotros</a></li>
@@ -60,7 +65,7 @@
                     <li class="nav-item text-light"><a href="#" class="nav-link">Padecimientos</a>
                     </li>
                     <li class="nav-item"><a href="#" class="nav-link">Cirugias</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">Contacto</a></li>
+                    <li class="nav-item me-5"><a href="#" class="nav-link">Contacto</a></li>
                 </ul>
                 <!--form action="" class="d-flex">
                     <input type="text"
@@ -84,12 +89,68 @@
         </div>
     </main>
     <footer>
-        <div class="container-fluid">
+        <div class="container">
             <div class="row">
-                <div class="col-12 col-lg-4">
+                <div class="col-12 col-lg-3">
                     <div class="m-0 m-lg-5 ">
                         <img src="img/Logo-s.png" class="w-100" alt="">
                     </div>
+                    <div class="text-white m-2 justify-text">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae quibusdam et incidunt nulla. Animi, vel.
+                    </div>
+                    <div class="my-3 text-white">
+                        Teléfono: 5555555555
+                    </div>
+                    <div class="text-center text-lg-start">
+                        <a target="_blank" href="https://wa.me/525551971493" ><button type="button" class="btn btn-primary">Envia un mensaje</button></a>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-3">
+                    <div class="text-center text-lg-start">
+                        <h2 class="text-white mt-4">Menu:</h2>
+                    </div>
+                    <hr class="text-white">
+                    <ul class="text-white">
+                        <li class="mb-1 ms-1"><a href="#" class="menu_g p-1">Inicio</a></li>
+                        <li class="mb-1 ms-1"><a href="#" class="menu_g p-1">Perfil Médico</a></li>
+                        <li class="mb-1 ms-1"><a href="#" class="menu_g p-1">Nosotros</a></li>
+                        <li class="mb-1 ms-1"><a href="#" class="menu_g p-1">Servicio</a></li>
+                        <li class="mb-1 ms-1"><a href="#" class="menu_g p-1">Equipo</a></li>
+                        <li class="mb-1 ms-1"><a href="#" class="menu_g p-1">Padecimientos</a></li>
+                        <li class="mb-1 ms-1"><a href="#" class="menu_g p-1">Cirugias</a></li>
+                        <li class="mb-1 ms-1"><a href="#" class="menu_g p-1">Contacto</a></li>
+                    </ul>
+                    <div class="mt-2 p-2 text-center">
+                        <button type="button" class="btn btn-info">Agenda tu cita</button>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-3">
+                    <div class="text-center text-lg-start">
+                        <h2 class="text-white mt-4">Padecimientos:</h2>
+                    </div>
+                    <hr class="text-white">
+                    <ul class="text-white">
+                        <li class="mb-1 ms-4"><a href="#" class="menu_g p-1">Cataratas</a></li>
+                        <li class="mb-1 ms-4"><a href="#" class="menu_g p-1">Queratocono</a></li>
+                        <li class="mb-1 ms-4"><a href="#" class="menu_g p-1">Retropatía Diabética</a></li>
+                        <li class="mb-1 ms-4"><a href="#" class="menu_g p-1">Miopía</a></li>
+                        <li class="mb-1 ms-4"><a href="#" class="menu_g p-1">Hipermetropia</a></li>
+                        <li class="mb-1 ms-4"><a href="#" class="menu_g p-1">Astigmatismo</a></li>
+                        <li class="mb-1 ms-4"><a href="#" class="menu_g p-1">Presbicia</a></li>
+                        <li class="mb-1 ms-4"><a href="#" class="menu_g p-1">Glaucoma</a></li>
+                        <li class="mb-1 ms-4"><a href="#" class="menu_g p-1">Estrabismo</a></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-lg-3">
+                    <div class="text-center text-lg-start">
+                        <h2 class="text-white mt-4">Redes Sociales:</h2>
+                    </div>
+                    <hr class="text-white">
+                    <ul class="text-white d-flex justify-content-center">
+                        <li class="mb-1 ms-4"><a href="#" class="menu_g p-1">Facebook</a></li>
+                        <li class="mb-1 ms-4"><a href="#" class="menu_g p-1">Twitter</a></li>
+                        <li class="mb-1 ms-4"><a href="#" class="menu_g p-1">instagram</a></li>
+                    </ul>
                 </div>
             </div>
         </div>
