@@ -7,15 +7,13 @@
     <title>GCO</title>
     <link rel="stylesheet" href="css/bootstrap.css">
     <style>
-        body {
-            background-color: #1B1B1B;
-        }
         .menu_g{
             text-decoration: none;
             color: white;
         }
         .menu_g:hover{
-            background-color: aqua;
+            background-color: #02839A;
+            border-radius: 30%;
             color:#1B1B1B
         }
         ul {
@@ -23,19 +21,19 @@
             padding: 0;
             margin: 0;
         }
-        
+        a{
+            text-decoration: none;
+        }
     </style>
 </head>
 <body>
-    <header>
+    <header class="bg-dark">
         <nav class="navbar py-2 navbar-expand-lg navcolor navbar-dark">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-4 col-sm-12">
                         <a href="#" class="navbar-brand"><img src="img/Logo-s.png" class="w-100" alt="" srcset=""></a>  
-                    </div>
-                
-                
+                    </div>    
                 <button class="navbar-toggler"
                 type="button"
                 data-bs-toggle="collapse"
@@ -88,7 +86,69 @@
             </div>
         </div>
     </main>
-    <footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-lg-5">
+                <div class="text-center">
+                    <h2>Contacto</h2>
+                </div>
+                <hr>
+                <div class="mt-4"></div>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab deleniti cumque quasi expedita labore eum illo dolor voluptatum repellat
+                 maxime ipsa impedit eveniet, soluta magni dolores nobis voluptatem facilis dolorum aliquam? Maxime aperiam quisquam dolores a esse vitae nihil fuga,
+                repellendus at voluptatem aspernatur tempore! Officia voluptatum ex rem minus.
+                <h3 class="mt-4">Teléfono</h3>
+                5555555555
+                <div class="my-4">
+                    <a href="https://wa.me/525551971493">
+                    <img src="img/Logo-whats.png" alt="" class="" width="8%">
+                    <button type="button" class="btn btn-success">Envia un mensaje</button></a>
+                </div>
+                <h3 class="mt-4">Dirección</h3>
+                <div class="mb-4">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quo, autem!
+                </div>
+                <div class="card my-2">
+                    <div class="card-header text-center">
+                        <h3>Contactanos</h3>
+                    </div>
+                    <div class="card-body"> 
+                        <form action="/" method="post">
+                            <div class="form-group">
+                                <label for="NombreForm" class="my-2">Escribe tu nombre</label>
+                                <input type="text" class="form-control" name="NombreForm" id="NombreForm" placeholder="Nombre">
+                            </div>
+                            <div class="form-group my-1">
+                                <label for="ApellidoForm" class="my-2">Escribe tus apellidos</label>
+                                <input type="text" class="form-control" name="ApellidoForm" id="ApellidoForm" placeholder="Apellidos">
+                            </div>
+                            <div class="form-group my-1">
+                                <label for="TelefonoForm" class="my-2">Escribe tu teléfono</label>
+                                <input type="number" class="form-control" name="TelefonoForm" id="TelefonoForm" placeholder="55">
+                            </div>
+                            <div class="form-group my-1">
+                                <label for="EmailForm" class="my-2">Escribe tu email</label>
+                                <input type="email" class="form-control" name="EmailForm" id="EmailForm" placeholder="correo@ejemplo.com">
+                            </div>
+                            <div class="form-check my-1">
+                                <input type="checkbox" class=" my-2 form-check-input" id="exampleCheck1">
+                                <label class="form-check-label" for="exampleCheck1">Acepto ser contactado por celular</label>
+                              </div>
+                              <div class="form-check my-1">
+                                <input type="checkbox" class=" my-2 form-check-input" id="TerminosForm">
+                                <label class="form-check-label" for="TerminosForm">Acepto los términos y condiciones</label>
+                              </div>
+                            <button type="submit" class="btn btn-primary w-100 mt-3">Agenda tu cita</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-7 col-12 ">
+                    <div class="mapouter"><div class="gmap_canvas"><iframe width=100% height=100% id="gmap_canvas" src="https://maps.google.com/maps?q=plaza%20carso&t=&z=17&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://fmovies-online.net"></a><br><style>.mapouter{position:relative;text-align:right;height:100%;width:100%;}</style><style>.gmap_canvas {overflow:hidden;background:none!important;height:100%;width:100%;}</style></div></div>
+            </div>
+        </div>
+    </div>
+    <footer class="bg-dark">
         <div class="container">
             <div class="row">
                 <div class="col-12 col-lg-3">
@@ -151,6 +211,14 @@
                         <li class="mb-1 ms-4"><a href="#" class="menu_g p-1">Twitter</a></li>
                         <li class="mb-1 ms-4"><a href="#" class="menu_g p-1">instagram</a></li>
                     </ul>
+                </div>
+            </div>
+        </div>
+        <hr class="text-white">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12 text-center mb-4 text-white">
+                    holamundo programmer
                 </div>
             </div>
         </div>
