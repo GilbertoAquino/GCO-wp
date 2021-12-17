@@ -1,0 +1,22 @@
+.btn-pgco {
+    color: #fff;
+    background-color: #02839A;
+    border-color: #02839A;
+  }
+  .btn-pgco:hover {
+    color: #fff;
+    background-color: #F7CC41;
+    border-color: #F7CC41;
+  }
+  .btn-links-f{
+    color: white;
+  }
+  .btn-links-f:hover{
+    background-color: #F7CC41;
+    border-color: #F7CC41;
+    color:#1A1A1A ;
+  }
+.bg-gco-dark {
+    --bs-bg-opacity: 1;
+    background-color:#1A1A1A !important;
+  }
