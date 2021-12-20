@@ -16,6 +16,25 @@
     border-color: #F7CC41;
     color:#1A1A1A ;
   }
+  .navbar-shrink{
+    transition: width 1s;
+      position: fixed;
+      top: 0;
+      right: 0;
+      left: 0;
+      z-index: 1030;
+      background-color: #1A1A1A;
+  }
+  .navbar-expand img {
+    transition: width 1s;
+  }
+  .navbar-shrink img {
+      transition: width 1s;
+      width: 40%;
+  }
+  .img-tab-w{
+      width: 100%;
+  }
 .bg-gco-dark {
     --bs-bg-opacity: 1;
     background-color:#1A1A1A !important;
@@ -115,6 +134,7 @@
   .timeline .timeline-body > p {
     margin-bottom: 0;
   }
+
   
   @media (min-width: 768px) {
     .timeline:before {
@@ -167,6 +187,9 @@
     .timeline > li.timeline-inverted > .timeline-panel {
       padding: 0 20px 20px;
     }
+    .img-tab-w{
+        width: 60%;
+    }
   }
   @media (min-width: 1200px) {
     .timeline > li {
@@ -187,19 +210,19 @@
       padding: 0 100px 20px 20px;
     }
   }
-  .navbar-shrink{
-    transition: width 1s;
-      position: fixed;
-      top: 0;
-      right: 0;
-      left: 0;
-      z-index: 1030;
-      background-color: #1A1A1A;
-  }
-  .navbar-expand img {
-    transition: width 1s;
-  }
-  .navbar-shrink img {
-      transition: width 1s;
-      width: 50%;
-  }
+  .b1{
+	text-decoration:none;
+	color:black;
+}
+.b1:hover{
+	animation-name:rotar2;
+	animation-duration:0.4s;
+	animation-iteration-count:infinite;
+}
+@keyframes rotar2{
+	0%{transform:rotate(0deg)}
+	25%{transform:rotate(20deg);}
+	50%{transform:rotate(-20deg)}
+	75%{transform:rotate(20deg)}
+	100%{transform:rotate(0deg);}
+}

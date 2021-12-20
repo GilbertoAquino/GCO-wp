@@ -78,10 +78,10 @@
             <div class="col-8 d-flex">
             <div class="collapse navbar-collapse" id="Cmenu">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li class="nav-item"><a href="#" class="nav-link">Inicio</a></li>
+                    <li class="nav-item"><a href="#Inicio" class="nav-link">Inicio</a></li>
                     <li class="nav-item"><a href="#" class="nav-link">Perfil Medico</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">Nosotros</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">Servicio</a></li>
+                    <li class="nav-item"><a href="#Nosotros" class="nav-link">Nosotros</a></li>
+                    <li class="nav-item"><a href="#Servicios" class="nav-link">Servicio</a></li>
                     <li class="nav-item dropdown"><a href="#" class="nav-link dropdown-toggle" 
                         id="viajes" role="button" data-bs-toggle="dropdown" 
                         aria-expanded="false">Equipo</a>
@@ -93,8 +93,8 @@
                     </li>
                     <li class="nav-item text-light"><a href="#" class="nav-link">Padecimientos</a>
                     </li>
-                    <li class="nav-item"><a href="#" class="nav-link">Cirugias</a></li>
-                    <li class="nav-item me-5"><a href="#" class="nav-link">Contacto</a></li>
+                    <li class="nav-item"><a href="#Cirugias" class="nav-link">Cirugias</a></li>
+                    <li class="nav-item me-5"><a href="#contacto" class="nav-link">Contacto</a></li>
                 </ul>
                 <!--form action="" class="d-flex">
                     <input type="text"
@@ -111,7 +111,7 @@
         </nav>
     </header>
     <main>
-        <div class="container-fluid-1">
+        <div class="container-fluid-1" id="Inicio">
             <div class="row">
                 <div class="col-12">
                     <div class="carousel slide" id="slide" data-bs-ride="carousel">
@@ -198,35 +198,87 @@
                 </div>
             </div>
         </div>
+        <hr id="Nosotros" class="mb-5">
         <div class="container">
             <div class="text-center">
-                <h2 class="">About</h2>
+                <h2 class="">Nosotros</h2>
                 <h3 class="text-muted mb-5">Lorem ipsum dolor sit amet consectetur.</h3>
             </div>
             <ul class="timeline">
                 <li>
-                    <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/1.jpg" alt="..." /></div>
+                    <div class="timeline-image"><img class="rounded-circle img-fluid" src="img/1.png" alt="..." /></div>
                     <div class="timeline-panel">
                         <div class="timeline-heading">
-                            <h4>2009-2011</h4>
-                            <h4 class="subheading">Our Humble Beginnings</h4>
+                            <h4>Misión</h4>
+                            <h4 class="subheading">Lorem, ipsum.</h4>
                         </div>
                         <div class="timeline-body"><p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p></div>
                     </div>
                 </li>
                 <li class="timeline-inverted">
-                    <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/2.jpg" alt="..." /></div>
+                    <div class="timeline-image"><img class="rounded-circle img-fluid" src="img/2.png" alt="..." /></div>
                     <div class="timeline-panel">
                         <div class="timeline-heading">
-                            <h4>March 2011</h4>
-                            <h4 class="subheading">An Agency is Born</h4>
+                            <h4>Visión</h4>
+                            <h4 class="subheading">Lorem, ipsum.</h4>
                         </div>
                         <div class="timeline-body"><p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p></div>
                     </div>
                 </li>
             </ul>
         </div>
-        <div class="container mb-5">
+        <hr id="Servicios" class="mt-5">
+        <div class="container mt-5">
+            <div class="row justify-content-center">
+                <div class="col-sm-12 col-lg-11">
+                    <div class="text-center">
+                        <h1 class="m-5">Servicios</h1>
+                    </div>
+                    <div class="card shadow-lg">
+                    <div class="d-flex align-items-start">
+                        <div class="nav flex-column nav-pills me-3" style="background-color: #F7CC41;" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                          <button class="nav-link py-5 active" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-contentM" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">Servicio 1</button>
+                          <button class="nav-link py-5" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-Coordinadora" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">Servicio 2</button>
+                          <button class="nav-link py-5" id="v-pills-messages-tab" data-bs-toggle="pill" data-bs-target="#v-pills-Redactora" type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false">Servicio 3</button>
+                          <button class="nav-link py-5" id="v-pills-settings-tab" data-bs-toggle="pill" data-bs-target="#v-pills-Editora" type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false">Servicio 4</button>
+                        </div>
+                        <div class="tab-content m-2" id="v-pills-tabContent">
+                            <div class="tab-pane fade show active" id="v-pills-contentM" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                                <div class="text-center me-3">
+                                    <p class="display-5">Servicio 1</p>
+                                    <img class="my-1 img-tab-w" style="border-color: black; border-style: solid;" src="img/dummy-720x480.png" alt="">
+                                    <p class="texto m-4">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora eum, consequatur magnam qui illo deleniti autem saepe laudantium eos odit?</p>
+                                </div>
+                            </div>
+                        <div class="tab-pane fade" id="v-pills-Coordinadora" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+                            <div class="text-center me-3">
+                                <p class="display-5">Servicio 2</p>
+                                <img class="my-1 img-tab-w" style="border-color: black; border-style: solid;" src="./img/dummy-720x480.png" alt="">
+                                <p class="texto m-4">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora eum, consequatur magnam qui illo deleniti autem saepe laudantium eos odit?</p>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="v-pills-Redactora" role="tabpanel" aria-labelledby="v-pills-messages-tab">
+                            <div class="text-center me-3">
+                                <p class="display-5">Servicio 3</p>
+                                <img class="my-1 img-tab-w" style="border-color: black; border-style: solid;" src="./img/dummy-720x480.png" alt="">
+                                <p class="texto m-4">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora eum, consequatur magnam qui illo deleniti autem saepe laudantium eos odit?</p>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="v-pills-Editora" role="tabpanel" aria-labelledby="v-pills-settings-tab">
+                            <div class="text-center my-1">
+                                <p class="display-5">Servicio 4</p>
+                                <img class="my-1 img-tab-w" style="border-color: black; border-style: solid;" src="./img/dummy-720x480.png" alt="">
+                                <p class="texto m-4">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora eum, consequatur magnam qui illo deleniti autem saepe laudantium eos odit?</p>
+                            </div>
+                        </div>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr id="Cirugias" class="mt-5">
+        <div class="container mt-5">
             <div class="row text-center">
                 <h2 class="my-5">Cirugias</h2>
                 <div class="item">
@@ -319,13 +371,13 @@
                 </div>
             </div>
         </div>
-        <hr>
+        <hr class="m-5" id="contacto">
     </main>
-    <div class="container">
+    <div class="container" >
         <div class="row">
             <div class="col-12 col-lg-4">
                 <div class="text-center">
-                    <h2>Contacto</h2>
+                    <h2 >Contacto</h2>
                 </div>
                 <hr>
                 <div class="mt-4"></div>
@@ -335,8 +387,8 @@
                 <h3 class="mt-4">Teléfono</h3>
                 5555555555
                 <div class="my-4">
-                    <a href="https://wa.me/525551971493">
-                    <img src="img/Logo-whats.png" alt="" class="" width="8%">
+                    <a target="_blank" href="https://wa.me/525555555555">
+                    <img src="img/Logo-whats.png" alt="" class="b1" width="8%">
                     <button type="button" class="btn btn-success">Envia un mensaje</button></a>
                 </div>
                 <h3 class="mt-4">Dirección</h3>
@@ -401,7 +453,7 @@
                         Teléfono: 5555555555
                     </div>
                     <div class="text-center text-lg-start">
-                        <a target="_blank" href="https://wa.me/525551971493" ><button type="button" class="btn btn-primary">Envia un mensaje</button></a>
+                        <a target="_blank" href="https://wa.me/525555555555" ><button type="button" class="btn btn-pgco">Envia un mensaje</button></a>
                     </div>
                 </div>
                 <div class="col-12 col-lg-3">
