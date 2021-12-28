@@ -1,7 +1,7 @@
 $(document).ready(function(){
 	$(window).scroll(function(){
 		var windowWidth = $(window).width();
-		if (windowWidth > 800){
+		if (windowWidth > 1200){
 			var scroll = $(window).scrollTop();
 
 			$('header .textos').css({
@@ -16,7 +16,7 @@ $(document).ready(function(){
 
 	$(window).resize(function(){
 		var windowWidth = $(window).width();
-		if (windowWidth < 800){
+		if (windowWidth < 1200){
 			$('.acerca-de article').css({
 					'transform': 'translate(0px, 0px)'
 			});
