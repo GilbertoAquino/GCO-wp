@@ -367,6 +367,9 @@ body{
       position: relative;
       width: 100%;
     }
+    .w-60{
+      width: 100%;
+    }
   
     .main .acerca-de article {
       position: relative;
