@@ -19,7 +19,7 @@ window.addEventListener('DOMContentLoaded', event => {
         if (window.scrollY === 0) {
             navbarCollapsible.classList.remove('navbar-shrink');
             navbarCollapsible.classList.add('navbar-expand');
-            imglogo.classList.add("w-100");
+            imglogo.classList.add("w-60");
             if ($(window).width() < 980){
                 navbarCollapsible.classList.remove('navbar-expand');
             }
@@ -27,9 +27,9 @@ window.addEventListener('DOMContentLoaded', event => {
         } else {
             navbarCollapsible.classList.add('navbar-shrink');
             navbarCollapsible.classList.remove('navbar-expand');
-            imglogo.classList.remove("w-100");
+            imglogo.classList.remove("w-60");
             if ($(window).width() < 980){
-                imglogo.classList.add('w-100')
+                imglogo.classList.add('w-60')
                 navbarCollapsible.classList.remove('navbar-shrink');
             }
         }
