@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="css/lightslider.css">
     <link rel="stylesheet" href="css/acerca-de.css">
     <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" crossorigin="anonymous"></script>
-    <!--link href="css/styles.css" rel="stylesheet" /--> 
     <style>
         .carousel {
             margin-bottom: 4rem;
@@ -109,22 +108,12 @@
                     <li class="nav-item"><a href="#acerca-de" class="nav-link rounded-1">Perfil Medico</a></li>
                     <li class="nav-item"><a href="#Nosotros" class="nav-link rounded-1">Nosotros</a></li>
                     <li class="nav-item"><a href="#Servicios" class="nav-link rounded-1">Servicio</a></li>
-                    <li class="nav-item dropdown"><!--a href="#Equipo" class="nav-link dropdown-toggle dropdown-toggle-split" 
-                        id="viajes" role="button" data-bs-toggle="dropdown" 
-                        aria-expanded="false">Equipo <span class="visually-hidden">Toggle Dropdown</span></a>
-                        <ul class="dropdown-menu" aria-labelledby="viajes">
-                            <li><a href="#" class="dropdown-item">opcion1</a></li>
-                            <li><a href="#" class="dropdown-item">opcion2</a></li>
-                            <li><a href="#" class="dropdown-item">opcion3</a></li>
-                        </ul-->
+                    <li class="nav-item dropdown">
                         <div class="btn-group">
                             <a href="#Equipo" class="nav-link rounded-1">Equipo</a>
                             <a href="#Equipo" class="nav-link dropdown-toggle dropdown-toggle-split" 
                             id="viajes" role="button" data-bs-toggle="dropdown" 
                             aria-expanded="false"><span class="visually-hidden">Toggle Dropdown</span></a>
-                            <!--button type="button" class="btn text-white dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
-                              <span class="visually-hidden">Toggle Dropdown</span>
-                            </button-->
                             <ul class="dropdown-menu">
                               <li><a class="dropdown-item" href="#">Action</a></li>
                               <li><a class="dropdown-item" href="#">Another action</a></li>
@@ -134,7 +123,18 @@
                             </ul>
                           </div>
                     </li>
-                    <li class="nav-item"><a href="#Padecimientos" class="nav-link rounded-1">Padecimientos</a>
+                    <li class="nav-item dropdown">
+                        <div class="btn-group">
+                            <a href="#Padecimientos" class="nav-link rounded-1">Padecimientos</a>
+                            <a href="#" class="nav-link dropdown-toggle dropdown-toggle-split" 
+                            id="viajes" role="button" data-bs-toggle="dropdown" 
+                            aria-expanded="false"><span class="visually-hidden">Toggle Dropdown</span></a>
+                            <ul class="dropdown-menu">
+                              <li><a class="dropdown-item" href="#Padecimientos" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Padecimiento 1</a></li>
+                              <li><a class="dropdown-item" href="#">Padecimiento 2</a></li>
+                              <li><a class="dropdown-item" href="#">Padecimiento 3</a></li>
+                            </ul>
+                          </div>
                     </li>
                     <li class="nav-item"><a href="#Cirugias" class="nav-link rounded-1">Cirugias</a></li>
                     <li class="nav-item me-5"><a href="#contacto" class="nav-link rounded-1">Contacto</a></li>
