@@ -200,11 +200,16 @@ body{
   .timeline .timeline-body > p {
     margin-bottom: 0;
   }
-
+  .hid{
+    margin-top: 10px;
+  }
   
   @media (min-width: 768px) {
     .timeline:before {
       left: 50%;
+    }
+    .hid{
+      margin-top:50px;
     }
     .timeline > li {
       min-height: 100px;
