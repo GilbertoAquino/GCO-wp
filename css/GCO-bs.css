@@ -2,6 +2,9 @@ body{
   background: url('../img/so-white.png');
 	background-repeat: repeat;
 }
+.top-text{
+  font-size: 12px;
+}
 .gco-pad{
   background: url('../img/mosaic.png');
 	background-repeat: repeat;
@@ -39,6 +42,13 @@ body{
   transform: translate(-50%,-50%);
   border-radius: 50%;
   border: 15px solid #02839A;
+}
+.ballg{
+  width: 10px;
+  height: 10px;
+  background: #fff;
+  left: 50%;
+  border-radius: 50%;
 }
 .text-decoration-none{
   color: #fff;
