@@ -27,12 +27,12 @@
     </style>
 </head>
 <body>
-    <header class="bg-gco-dark">
+    <header class="bg-gco-dark" id="Inicio">
         <nav class="navbar py-2 navbar-expand-lg navcolor navbar-dark" id="mainNav">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-4 col-sm-12">
-                        <a href="#" class="navbar-brand"><img src="img/Logo-s.png" id="imglogo" class="p-2 w-60" alt="" srcset=""></a>  
+                        <a href="#" class="navbar-brand"><img src="img/Logo-s-a.png" id="imglogo" class="p-2 w-60" alt="" srcset=""></a>  
                     </div>    
                 <button class="navbar-toggler"
                 type="button"
@@ -47,14 +47,14 @@
             <div class="col-8 d-flex">
             <div class="collapse navbar-collapse" id="Cmenu">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li class="nav-item"><a href="#Inicio" class="nav-link rounded-1">Inicio</a></li>
-                    <li class="nav-item"><a href="#acerca-de" class="nav-link rounded-1">Perfil Medico</a></li>
-                    <li class="nav-item"><a href="#Nosotros" class="nav-link rounded-1">Nosotros</a></li>
-                    <li class="nav-item"><a href="#Servicios" class="nav-link rounded-1">Servicio</a></li>
+                    <li class="nav-item"><a href="#Inicio" class="nav-link rounded-1 text-white">Inicio</a></li>
+                    <li class="nav-item"><a href="#acerca-de" class="nav-link rounded-1 text-white">Perfil Medico</a></li>
+                    <li class="nav-item"><a href="#Nosotros" class="nav-link rounded-1 text-white">Nosotros</a></li>
+                    <li class="nav-item"><a href="#Servicios" class="nav-link rounded-1 text-white">Servicio</a></li>
                     <li class="nav-item dropdown">
                         <div class="btn-group">
-                            <a href="#Equipo" class="nav-link rounded-1">Equipo</a>
-                            <a href="#Equipo" class="nav-link dropdown-toggle dropdown-toggle-split" 
+                            <a href="#Equipo" class="nav-link rounded-1 text-white">Equipo</a>
+                            <a href="#Equipo" class="nav-link dropdown-toggle dropdown-toggle-split text-white" 
                             id="viajes" role="button" data-bs-toggle="dropdown" 
                             aria-expanded="false"><span class="visually-hidden">Toggle Dropdown</span></a>
                             <ul class="dropdown-menu">
@@ -68,8 +68,8 @@
                     </li>
                     <li class="nav-item dropdown">
                         <div class="btn-group">
-                            <a href="#Padecimientos" class="nav-link rounded-1">Padecimientos</a>
-                            <a href="#" class="nav-link dropdown-toggle dropdown-toggle-split" 
+                            <a href="#Padecimientos" class="nav-link rounded-1 text-white">Padecimientos</a>
+                            <a href="#" class="nav-link dropdown-toggle dropdown-toggle-split text-white" 
                             id="viajes" role="button" data-bs-toggle="dropdown" 
                             aria-expanded="false"><span class="visually-hidden">Toggle Dropdown</span></a>
                             <ul class="dropdown-menu">
@@ -79,8 +79,8 @@
                             </ul>
                           </div>
                     </li>
-                    <li class="nav-item"><a href="#Cirugias" class="nav-link rounded-1">Cirugias</a></li>
-                    <li class="nav-item me-5"><a href="#contacto" class="nav-link rounded-1">Contacto</a></li>
+                    <li class="nav-item"><a href="#Cirugias" class="nav-link rounded-1 text-white">Cirugias</a></li>
+                    <li class="nav-item me-5"><a href="#contacto" class="nav-link rounded-1 text-white">Contacto</a></li>
                 </ul>
                 <!--form action="" class="d-flex">
                     <input type="text"
@@ -97,10 +97,46 @@
         </nav>
     </header>
     <main>
-        <div class="container-fluid-1">
+        <div class="container-fluid-1 mb-5">
             <div class="row">
                 <div class="col-12">
-                    <img class="w-100" src="img/gift.gif" alt="">
+                    <div id="carouselExampleSlidesOnly" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                          <div class="carousel-item active" data-bs-interval="9800">
+                            <img src="img/gift.gif" class="d-block w-100" alt="...">
+                            <div class="carousel-caption">
+                                <div>
+                                    <img src="img/Logo-s-a.png" class="w-75" alt="">
+                                </div>
+                                <a href="#contacto"><button class="btn btn-pgco my-5">¡Agenda tu cita!</button></a>
+                                <div class="mt-5">
+                                </div>
+                              </div>
+                          </div>
+                          <div class="carousel-item" data-bs-interval="6700">
+                            <img src="img/gift1.gif" class="d-block w-100"  alt="...">
+                            <div class="carousel-caption">
+                                <div>
+                                    <img src="img/Logo-s-a.png" class="w-75" alt="">
+                                </div>
+                                <a href="#contacto"><button class="btn btn-pgco my-5">¡Agenda tu cita!</button></a>
+                                <div class="mt-5">
+                                </div>
+                              </div>
+                          </div>
+                          <div class="carousel-item" data-bs-interval="7300">
+                            <img src="img/gift2.gif" class="d-block w-100" alt="...">
+                            <div class="carousel-caption">
+                                <div>
+                                    <img src="img/Logo-s-a.png" class="w-75" alt="">
+                                </div>
+                                <a href="#contacto"><button class="btn btn-pgco my-5">¡Agenda tu cita!</button></a>
+                                <div class="mt-5">
+                                </div>
+                              </div>
+                          </div>
+                        </div>
+                      </div>
                 </div>
             </div>
         </div>
@@ -124,8 +160,7 @@
                 </div>
             </div>
         </div>
-        <br class="height-w">
-        <hr id="Nosotros" class="">
+        <hr id="Nosotros" class="height-w">
         <div class="container mt-5">
             <div class="text-center">
                 <h2 class="">Nosotros</h2>

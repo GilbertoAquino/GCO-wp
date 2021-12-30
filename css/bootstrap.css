@@ -4045,6 +4045,7 @@ textarea.form-control-lg {
 .navbar-nav .nav-link {
   padding-right: 0;
   padding-left: 0;
+  text-decoration-color: #02839A;
 }
 .navbar-nav .dropdown-menu {
   position: static;

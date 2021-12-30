@@ -81,12 +81,14 @@ body{
   }
   .navbar-expand{
     position: fixed;
+    background:rgba(26, 26, 26, 0);
+    z-index: 10000;
   }
   .navbar-expand img {
-    transition: width 1s;
+    transition: width 0.5s;
   }
   .navbar-shrink img {
-      transition: width 1s;
+      transition: width 0.2s;
       width: 25%;
   }
   .img-tab-w{
