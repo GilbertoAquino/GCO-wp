@@ -79,6 +79,9 @@ body{
       z-index: 1030;
       background-color: #1A1A1A;
   }
+  .navbar-expand{
+    position: fixed;
+  }
   .navbar-expand img {
     transition: width 1s;
   }
