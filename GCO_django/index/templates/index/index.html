@@ -35,7 +35,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-4 col-sm-12">
-                        <a href="#" class="navbar-brand"><img src="{% static 'img/Logo-s-a.png' %}" id="imglogo" class="p-2 w-60" alt="" srcset=""></a>  
+                        <a href="#" class="navbar-brand"><img src="{% static 'img/Logo-s-a.png' %}" id="imglogo" class="p-2 w-60" alt="" srcset=""></a> 
                     </div>    
                 <button class="navbar-toggler"
                 type="button"
@@ -109,7 +109,7 @@
                             <img src="{% static 'img/gift.gif' %}" class="d-block w-100" alt="...">
                             <div class="carousel-caption">
                                 <div>
-                                    <img src="img/Logo-s-a.png" class="w-75" alt="">
+                                    <img src="{%static 'img/Logo-s-a.png'%}" class="w-75" alt="">
                                 </div>
                                 <a href="#contacto"><button class="btn btn-pgco hid">¡Agenda tu cita!</button></a>
                                 <div class="mt-5">
@@ -120,7 +120,7 @@
                             <img src="{% static 'img/gift1.gif' %}" class="d-block w-100"  alt="...">
                             <div class="carousel-caption">
                                 <div>
-                                    <img src="img/Logo-s-a.png" class="w-75" alt="">
+                                    <img src="{%static 'img/Logo-s-a.png'%}" class="w-75" alt="">
                                 </div>
                                 <a href="#contacto"><button class="btn btn-pgco hid">¡Agenda tu cita!</button></a>
                                 <div class="mt-5">
@@ -131,7 +131,7 @@
                             <img src="{% static 'img/gift2.gif' %}" class="d-block w-100" alt="...">
                             <div class="carousel-caption">
                                 <div>
-                                    <img src="img/Logo-s-a.png" class="w-75" alt="">
+                                    <img src="{%static 'img/Logo-s-a.png'%}" class="w-75" alt="">
                                 </div>
                                 <a href="#contacto"><button class="btn btn-pgco hid">¡Agenda tu cita!</button></a>
                                 <div class="mt-5">
@@ -150,7 +150,7 @@
                         <section class="acerca-de" id="acerca-de">
                             <div class="contenedor">
                                 <div class="foto">
-                                    <img src="img/ojo.png" alt="">
+                                    <img src="{% static 'img/ojo.png'%}" alt="">
                                 </div>
                                 <article>
                                     <h3>Perfil Médico</h3>
@@ -178,7 +178,7 @@
             </div>
             <ul class="timeline">
                 <li>
-                    <div class="timeline-image"><img class="rounded-circle img-fluid" src="img/1.png" alt="..." /></div>
+                    <div class="timeline-image"><img class="rounded-circle img-fluid" src="{% static 'img/1.png'%}" alt="..." /></div>
                     <div class="timeline-panel">
                         <div class="timeline-heading">
                             <h4>Misión</h4>
@@ -188,7 +188,7 @@
                     </div>
                 </li>
                 <li class="timeline-inverted">
-                    <div class="timeline-image"><img class="rounded-circle img-fluid" src="img/2.png" alt="..." /></div>
+                    <div class="timeline-image"><img class="rounded-circle img-fluid" src="{% static 'img/2.png'%}" alt="..." /></div>
                     <div class="timeline-panel">
                         <div class="timeline-heading">
                             <h4>Visión</h4>
@@ -219,28 +219,28 @@
                                 <div class="tab-pane fade show active" id="v-pills-contentM" role="tabpanel" aria-labelledby="v-pills-home-tab">
                                     <div class="text-center me-3">
                                         <p class="display-5">Servicio 1</p>
-                                        <img class="my-1 img-tab-w" style="border-color: black; border-style: solid;" src="img/dummy-720x480.png" alt="">
+                                        <img class="my-1 img-tab-w" style="border-color: black; border-style: solid;" src="{% static 'img/dummy-720x480.png'%}" alt="">
                                         <p class="texto m-4">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora eum, consequatur magnam qui illo deleniti autem saepe laudantium eos odit?</p>
                                     </div>
                                 </div>
                             <div class="tab-pane fade" id="v-pills-Coordinadora" role="tabpanel" aria-labelledby="v-pills-profile-tab">
                                 <div class="text-center me-3">
                                     <p class="display-5">Servicio 2</p>
-                                    <img class="my-1 img-tab-w" style="border-color: black; border-style: solid;" src="./img/dummy-720x480.png" alt="">
+                                    <img class="my-1 img-tab-w" style="border-color: black; border-style: solid;" src="{% static 'img/dummy-720x480.png'%}" alt="">
                                     <p class="texto m-4">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora eum, consequatur magnam qui illo deleniti autem saepe laudantium eos odit?</p>
                                 </div>
                             </div>
                             <div class="tab-pane fade" id="v-pills-Redactora" role="tabpanel" aria-labelledby="v-pills-messages-tab">
                                 <div class="text-center me-3">
                                     <p class="display-5">Servicio 3</p>
-                                    <img class="my-1 img-tab-w" style="border-color: black; border-style: solid;" src="./img/dummy-720x480.png" alt="">
+                                    <img class="my-1 img-tab-w" style="border-color: black; border-style: solid;" src="{% static 'img/dummy-720x480.png'%}" alt="">
                                     <p class="texto m-4">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora eum, consequatur magnam qui illo deleniti autem saepe laudantium eos odit?</p>
                                 </div>
                             </div>
                             <div class="tab-pane fade" id="v-pills-Editora" role="tabpanel" aria-labelledby="v-pills-settings-tab">
                                 <div class="text-center my-1">
                                     <p class="display-5">Servicio 4</p>
-                                    <img class="my-1 img-tab-w" style="border-color: black; border-style: solid;" src="./img/dummy-720x480.png" alt="">
+                                    <img class="my-1 img-tab-w" style="border-color: black; border-style: solid;" src="{% static 'img/dummy-720x480.png'%}" alt="">
                                     <p class="texto m-4">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora eum, consequatur magnam qui illo deleniti autem saepe laudantium eos odit?</p>
                                 </div>
                             </div>
@@ -265,7 +265,7 @@
                             <div class="portfolio-hover">
                                 <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <img class="img-fluid" src="img/portfolio-dummy.png" alt="..." />
+                            <img class="img-fluid" src="{% static 'img/portfolio-dummy.png' %}" alt="..." />
                         </a>
                         <div class="portfolio-caption">
                             <div class="portfolio-caption-heading"><h4>Equipo 1</h4></div>
@@ -280,7 +280,7 @@
                             <div class="portfolio-hover">
                                 <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <img class="img-fluid" src="img/portfolio-dummy.png" alt="..." />
+                            <img class="img-fluid" src="{% static 'img/portfolio-dummy.png' %}" alt="..." />
                         </a>
                         <div class="portfolio-caption">
                             <div class="portfolio-caption-heading">Equipo 2</div>
@@ -295,7 +295,7 @@
                             <div class="portfolio-hover">
                                 <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <img class="img-fluid" src="img/portfolio-dummy.png" alt="..." />
+                            <img class="img-fluid" src="{% static 'img/portfolio-dummy.png' %}" alt="..." />
                         </a>
                         <div class="portfolio-caption">
                             <div class="portfolio-caption-heading">Equipo 3</div>
@@ -310,7 +310,7 @@
                             <div class="portfolio-hover">
                                 <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <img class="img-fluid" src="img/portfolio-dummy.png" alt="..." />
+                            <img class="img-fluid" src="{% static 'img/portfolio-dummy.png' %}" alt="..." />
                         </a>
                         <div class="portfolio-caption">
                             <div class="portfolio-caption-heading">Equipo 4</div>
@@ -325,7 +325,7 @@
                             <div class="portfolio-hover">
                                 <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <img class="img-fluid" src="img/portfolio-dummy.png" alt="..." />
+                            <img class="img-fluid" src="{% static 'img/portfolio-dummy.png' %}" alt="..." />
                         </a>
                         <div class="portfolio-caption">
                             <div class="portfolio-caption-heading">Equipo 5</div>
@@ -340,7 +340,7 @@
                             <div class="portfolio-hover">
                                 <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <img class="img-fluid" src="img/portfolio-dummy.png" alt="..." />
+                            <img class="img-fluid" src="{% static 'img/portfolio-dummy.png' %}" alt="..." />
                         </a>
                         <div class="portfolio-caption">
                             <div class="portfolio-caption-heading">Equipo 6</div>
@@ -379,7 +379,7 @@
                                 <div class="accordion-body">
                                   <div class="card">
                                     <div class="card-img-top">
-                                        <img src="img/portfolio-dummy.png" class="w-60" alt="">
+                                        <img src="{% static 'img/portfolio-dummy.png' %}" class="w-60" alt="">
                                     </div>
                                   </div>
                                   <div class="card-body">
@@ -405,7 +405,7 @@
                                   <div class="accordion-body">
                                     <div class="card">
                                       <div class="card-img-top">
-                                          <img src="img/portfolio-dummy.png" class="w-75" alt="">
+                                          <img src="{% static 'img/portfolio-dummy.png' %}" class="w-75" alt="">
                                       </div>
                                     </div>
                                     <div class="card-body">
@@ -431,7 +431,7 @@
                                   <div class="accordion-body">
                                     <div class="card">
                                       <div class="card-img-top">
-                                          <img src="img/portfolio-dummy.png" class="w-75" alt="">
+                                          <img src="{% static 'img/portfolio-dummy.png' %}" class="w-75" alt="">
                                       </div>
                                     </div>
                                     <div class="card-body">
@@ -459,7 +459,7 @@
                         <li>
                             <div class="card text-center shadow">
                                 <div class="card-img-top">
-                                    <img class="w-100" src="./img/350x200.png" alt="">
+                                    <img class="w-100" src="{% static 'img/350x200.png'%}" alt="">
                                 </div>
                                 <div class="card-body text-start">
                                     <h5 class="card-title">Cirugía LASIK</h5>
@@ -474,7 +474,7 @@
                         <li>
                             <div class="card text-center shadow">
                                 <div class="card-img-top">
-                                    <img class="w-100" src="./img/350x200.png" alt="">
+                                    <img class="w-100" src="{% static 'img/350x200.png'%}" alt="">
                                 </div>
                                 <div class="card-body text-start">
                                     <h5 class="card-title">Cirugía refractiva</h5>
@@ -488,7 +488,7 @@
                         <li>
                             <div class="card text-center shadow">
                                 <div class="card-img-top">
-                                    <img class="w-100" src="./img/350x200.png" alt="">
+                                    <img class="w-100" src="{% static 'img/350x200.png'%}" alt="">
                                 </div>
                                 <div class="card-body text-start">
                                     <h5 class="card-title">Cirugía de cataratas</h5>
@@ -500,7 +500,7 @@
                         <li>
                             <div class="card text-center shadow">
                                 <div class="card-img-top">
-                                    <img class="w-100" src="./img/350x200.png" alt="">
+                                    <img class="w-100" src="{% static 'img/350x200.png'%}" alt="">
                                 </div>
                                 <div class="card-body text-start">
                                     <h5 class="card-title">Cirugía corneal</h5>
@@ -514,7 +514,7 @@
                         <li>
                             <div class="card text-center shadow">
                                 <div class="card-img-top">
-                                    <img class="w-100" src="./img/350x200.png" alt="">
+                                    <img class="w-100" src="{% static 'img/350x200.png'%}" alt="">
                                 </div>
                                 <div class="card-body text-start">
                                     <h5 class="card-title">Cirugía glaucoma</h5>
@@ -526,7 +526,7 @@
                         <li>
                             <div class="card text-center shadow">
                                 <div class="card-img-top">
-                                    <img class="w-100" src="./img/350x200.png" alt="">
+                                    <img class="w-100" src="{% static 'img/350x200.png'%}" alt="">
                                 </div>
                                 <div class="card-body text-start">
                                     <h5 class="card-title">Cirugía de retina</h5>
@@ -614,7 +614,7 @@
             <div class="row">
                 <div class="col-12 col-lg-4">
                     <div class="m-0 m-lg-5">
-                        <img src="img/Logo-s.png" class="w-100" alt="">
+                        <img src="{% static 'img/Logo-s.png'%}" class="w-100" alt="">
                     </div>
                     <div class="text-white m-2 justify-text">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae quibusdam et incidunt nulla. Animi, vel.

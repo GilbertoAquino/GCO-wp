@@ -1,9 +1,8 @@
 body{
   background: url('../img/so-white.png');
 	background-repeat: repeat;
-}
-.top-text{
-  font-size: 12px;
+  font-family: 'Montserrat';
+  font-size: 16px;
 }
 .gco-pad{
   background: url('../img/mosaic.png');
@@ -42,13 +41,6 @@ body{
   transform: translate(-50%,-50%);
   border-radius: 50%;
   border: 15px solid #02839A;
-}
-.ballg{
-  width: 10px;
-  height: 10px;
-  background: #fff;
-  left: 50%;
-  border-radius: 50%;
 }
 .text-decoration-none{
   color: #fff;
@@ -89,11 +81,16 @@ body{
       z-index: 1030;
       background-color: #1A1A1A;
   }
+  .navbar-expand{
+    position: fixed;
+    background:rgba(26, 26, 26, 0);
+    z-index: 10000;
+  }
   .navbar-expand img {
-    transition: width 1s;
+    transition: width 0.5s;
   }
   .navbar-shrink img {
-      transition: width 1s;
+      transition: width 0.2s;
       width: 25%;
   }
   .img-tab-w{
@@ -205,11 +202,16 @@ body{
   .timeline .timeline-body > p {
     margin-bottom: 0;
   }
-
+  .hid{
+    margin-top: 10px;
+  }
   
   @media (min-width: 768px) {
     .timeline:before {
       left: 50%;
+    }
+    .hid{
+      margin-top:50px;
     }
     .timeline > li {
       min-height: 100px;
