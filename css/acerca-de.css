@@ -25,7 +25,7 @@
     position: relative;
     float: right;
     /*top: 30px;*/
-    top: 900px; /*Con Parallax*/
+    top: 1700px; /*Con Parallax*/
     z-index: 1000;
     -webkit-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.35);
     box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.35);
@@ -42,7 +42,7 @@
     margin-bottom: 15px;
   }
   .height-w{
-      margin-top: 250px;
+      margin-top: -200px;
   }
   @media screen and (max-width: 1200px) {
     .main .acerca-de .foto {

@@ -6,7 +6,22 @@
 //
 // Scripts
 // 
-
+window.addEventListener("resize",function(event){
+    const navbarCollapsible = document.body.querySelector('#mainNav');
+    const imglogo = document.body.querySelector('#imglogo');
+    const carrousel_img = document.body.querySelector("#crs_img");
+    if ($(window).width() < 980){
+        navbarCollapsible.classList.remove('navbar-expand');
+        //carrousel_img.classList.remove('w-100');
+    }
+    else{
+        navbarCollapsible.classList.add('navbar-expand');
+        carrousel_img.classList.add('w-100');
+    }
+},true);
+document.addEventListener("resize",function(){
+    console.log('holamundo');
+});
 window.addEventListener('DOMContentLoaded', event => {
 
     // Navbar shrink function

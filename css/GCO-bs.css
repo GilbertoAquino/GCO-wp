@@ -1,6 +1,8 @@
 body{
   background: url('../img/so-white.png');
 	background-repeat: repeat;
+  font-family: 'Montserrat';
+  font-size: 16px;
 }
 .gco-pad{
   background: url('../img/mosaic.png');
