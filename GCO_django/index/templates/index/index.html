@@ -204,19 +204,32 @@
             <div class="container pt-5">
                 <div class="row justify-content-center">
                     <div class="col-sm-12 col-lg-11">
-                        <div class="text-center">
+                        <div class="text-center mb-5">
                             <h1 class="text-white">Servicios</h1>
                         </div>
                         <div class="card shadow-lg">
                         <div class="d-flex align-items-start">
                             <div class="nav flex-column nav-pills me-3" style="background-color: #02839A;" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                              <button class="nav-link py-5 active" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-contentM" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">Servicio 1</button>
+                              {%for i in serviciosquery%}
+                              <button class="nav-link py-5 {%if forloop.counter0 == 0%}active{%endif%}" id="v-pills-{{forloop.counter0}}-tab" data-bs-toggle="pill" data-bs-target="#v-pills-{{forloop.counter0}}" type="button" role="tab" aria-controls="v-pills-{{forloop.counter0}}" aria-selected="{%if forloop.counter0 == 0%}true{%else%}false{%endif%}">{{i.boton}}</button>
+                              {%endfor%}
+                              <button class="nav-link py-5" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-contentM" type="button" role="tab" aria-controls="v-pills-home" aria-selected="false">Servicio 1</button>
                               <button class="nav-link py-5" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-Coordinadora" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">Servicio 2</button>
                               <button class="nav-link py-5" id="v-pills-messages-tab" data-bs-toggle="pill" data-bs-target="#v-pills-Redactora" type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false">Servicio 3</button>
                               <button class="nav-link py-5" id="v-pills-settings-tab" data-bs-toggle="pill" data-bs-target="#v-pills-Editora" type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false">Servicio 4</button>
                             </div>
                             <div class="tab-content m-2" id="v-pills-tabContent">
-                                <div class="tab-pane fade show active" id="v-pills-contentM" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                                {%for i in serviciosquery%}
+                                <div class="tab-pane fade show {%if forloop.counter0 == 0%}active{%endif%}" id="v-pills-{{forloop.counter0}}" role="tabpanel" aria-labelledby="v-pills-{{forloop.counter0}}">
+                                    <div class="text-center me-3">
+                                        <p class="display-5">{{i.titulo}}</p>
+                                        <img class="my-1 img-tab-w" style="border-color: black; border-style: solid;" src="{{i.imagen.url}}" alt="">
+                                        <p class="texto m-4">{{i.descripcion}}</p>
+                                        <a target="_blank" href="https://wa.me/525555555555" ><button type="button" class="btn btn-pgco">Agenda tu cita</button></a>
+                                    </div>
+                                </div>
+                                {%endfor%}
+                                <div class="tab-pane fade show" id="v-pills-contentM" role="tabpanel" aria-labelledby="v-pills-home-tab">
                                     <div class="text-center me-3">
                                         <p class="display-5">Servicio 1</p>
                                         <img class="my-1 img-tab-w" style="border-color: black; border-style: solid;" src="{% static 'img/dummy-720x480.png'%}" alt="">
@@ -253,102 +266,47 @@
         </section>
         <hr class="mb-5" id="Equipo">
         <div class="container mt-5" id="portfolio">
-            <div class="text-center">
-                <h2 class="section-heading text-uppercase">Equipo</h2>
-                <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+            <div class="text-center mb-4">
+                <h2 class=" ">Equipo</h2>
+                <h3 class="text-muted">¡Cónoce los equipos que manejamos!</h3>
             </div>
             <div class="row">
-                <div class="col-lg-4 col-sm-6 mb-4">
-                    <!-- Portfolio item 1-->
-                    <div class="portfolio-item">
-                        <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal1">
+                {%for i in equipoquery%}
+                <div class="col-lg-3 col-sm-6 mb-4">
+                    <div class="portfolio-item" id="{{i.url}}1">
+                        <a class="portfolio-link" href="{{i.url}}">
                             <div class="portfolio-hover">
                                 <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <img class="img-fluid" src="{% static 'img/portfolio-dummy.png' %}" alt="..." />
+                            <img class="img-fluid" src="{{i.imagen.url}}" alt="..." />
                         </a>
                         <div class="portfolio-caption">
-                            <div class="portfolio-caption-heading"><h4>Equipo 1</h4></div>
-                            <div class="portfolio-caption-subheading text-muted">Lorem ipsum dolor sit amet.</div>
+                            <div class=""><h4>{{i.titulo}}</h4></div>
+                            <div class="text-muted">{{i.descripcion}}</div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-sm-6 mb-4">
-                    <!-- Portfolio item 2-->
-                    <div class="portfolio-item">
-                        <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal2">
-                            <div class="portfolio-hover">
-                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                <div class="modal fade" id="{{i.url}}" tabindex="-1" aria-labelledby="{{i.titulo}}" aria-hidden="true">
+                    <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="{{i.titulo}}">{{i.titulo}}</h5>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="mx-5 px-5">
+                                {{i.articulo|safe}}
                             </div>
-                            <img class="img-fluid" src="{% static 'img/portfolio-dummy.png' %}" alt="..." />
-                        </a>
-                        <div class="portfolio-caption">
-                            <div class="portfolio-caption-heading">Equipo 2</div>
-                            <div class="portfolio-caption-subheading text-muted">Lorem ipsum dolor sit amet.</div>
                         </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                          <button type="button" class="btn btn-primary">Contactanos</button>
+                        </div>
+                      </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-sm-6 mb-4">
-                    <!-- Portfolio item 3-->
-                    <div class="portfolio-item">
-                        <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal3">
-                            <div class="portfolio-hover">
-                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                            </div>
-                            <img class="img-fluid" src="{% static 'img/portfolio-dummy.png' %}" alt="..." />
-                        </a>
-                        <div class="portfolio-caption">
-                            <div class="portfolio-caption-heading">Equipo 3</div>
-                            <div class="portfolio-caption-subheading text-muted">Lorem ipsum dolor sit amet.</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
-                    <!-- Portfolio item 4-->
-                    <div class="portfolio-item">
-                        <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal4">
-                            <div class="portfolio-hover">
-                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                            </div>
-                            <img class="img-fluid" src="{% static 'img/portfolio-dummy.png' %}" alt="..." />
-                        </a>
-                        <div class="portfolio-caption">
-                            <div class="portfolio-caption-heading">Equipo 4</div>
-                            <div class="portfolio-caption-subheading text-muted">Lorem ipsum dolor sit amet.</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6 mb-4 mb-sm-0">
-                    <!-- Portfolio item 5-->
-                    <div class="portfolio-item">
-                        <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal5">
-                            <div class="portfolio-hover">
-                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                            </div>
-                            <img class="img-fluid" src="{% static 'img/portfolio-dummy.png' %}" alt="..." />
-                        </a>
-                        <div class="portfolio-caption">
-                            <div class="portfolio-caption-heading">Equipo 5</div>
-                            <div class="portfolio-caption-subheading text-muted">Lorem ipsum dolor sit amet.</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <!-- Portfolio item 6-->
-                    <div class="portfolio-item">
-                        <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal6">
-                            <div class="portfolio-hover">
-                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
-                            </div>
-                            <img class="img-fluid" src="{% static 'img/portfolio-dummy.png' %}" alt="..." />
-                        </a>
-                        <div class="portfolio-caption">
-                            <div class="portfolio-caption-heading">Equipo 6</div>
-                            <div class="portfolio-caption-subheading text-muted">Lorem ipsum dolor sit amet.</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                {%endfor%}
+            </div>  
         </div>
         <section class="gco-pad py-5" id="Padecimientos">
             <div class="container">
@@ -366,6 +324,32 @@
                     </div>
                     <div class="col-12 col-lg-8 text-center">
                         <div class="accordion" id="accordionExample">
+                            {%for i in padquery%}
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingOne">
+                                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#{{i.url}}" aria-expanded="true" aria-controls="{{i.url}}">
+                                      <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
+                                          <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z"/>
+                                          <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z"/>
+                                        </svg><strong class="ms-2">{{i.titulo}}</strong>
+                                  </button>
+                                </h2>
+                                <div id="{{i.url}}" class="accordion-collapse collapse" aria-labelledby="{{i.url}}1" data-bs-parent="#accordionExample">
+                                  <div class="accordion-body">
+                                    <div class="card">
+                                      <div class="card-img-top">
+                                          <img src="{{i.imagen.url}}" class="w-60" alt="">
+                                      </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <p class="card-text">
+                                            {{i.descripcion}}
+                                        </p>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            {%endfor%}
                             <div class="accordion-item">
                               <h2 class="accordion-header" id="headingOne">
                                 <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
@@ -456,129 +440,42 @@
                 <h2 class="my-5">Cirugias</h2>
                 <div class="item">
                     <ul id="content-slider" class="content-slider">
+                        {%for i in cirugiasquery%}
                         <li>
-                            <div class="card text-center shadow">
+                            <div class="card text-center shadow" id="{{i.url}}1">
                                 <div class="card-img-top">
-                                    <img class="w-100" src="{% static 'img/350x200.png'%}" alt="">
+                                    <img class="w-100" src="{{i.imagen.url}}" alt="">
                                 </div>
                                 <div class="card-body text-start">
-                                    <h5 class="card-title">Cirugía LASIK</h5>
-                                    <p class="card-text"><p style="text-align: justify;"><span>El LASIK es un tipo de cirug&iacute;a ocular refractiva con l&aacute;ser que, en general, logra que las personas con miop&iacute;a, hipermetrop&iacute;a o astigmatismo tengan una visi&oacute;n de 20/20 o mejor.&nbsp;</span></p>
-                                    <p style="text-align: justify;">En un ojo sano, las im&aacute;genes se enfocan en la retina en la parte posterior del ojo, pero en una persona con miop&iacute;a, hipermetrop&iacute;a o astigmatismo, las im&aacute;genes terminan enfoc&aacute;ndose en la parte frontal o posterior de la retina, lo que causa una visi&oacute;n borrosa.</p>
-                                    <p id="isPasted" style="text-align: justify;"></p>
-                                </p>
-                                    <button type="button" class="btn btn-pgco" data-bs-toggle="modal" data-bs-target="#exampleModal">Continuar leyendo</button>
+                                    <h5 class="card-title">{{i.titulo}}</h5>
+                                    <p class="card-text">{{i.descripcion|safe}}</p>
+                                    <a href="{{i.url}}"><button type="button" class="btn btn-pgco">{{i.boton}}</button></a>
                                 </div>
                             </div>
                         </li>
-                        <li>
-                            <div class="card text-center shadow">
-                                <div class="card-img-top">
-                                    <img class="w-100" src="{% static 'img/350x200.png'%}" alt="">
-                                </div>
-                                <div class="card-body text-start">
-                                    <h5 class="card-title">Cirugía refractiva</h5>
-                                    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit minima impedit eligendi nisi et iste voluptatibus, 
-                                    beatae odit consequatur sit expedita quasi voluptatum illo inventore obcaecati consectetur fugit dolorum magnam quae dolores id veniam aut 
-                                    officia? Fugit at in, nisi ab consequuntur, libero quasi sint adipisci soluta possimus odio aspernatur?</p>
-                                    <button type="button" class="btn btn-pgco">Continua leyendo</button>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="card text-center shadow">
-                                <div class="card-img-top">
-                                    <img class="w-100" src="{% static 'img/350x200.png'%}" alt="">
-                                </div>
-                                <div class="card-body text-start">
-                                    <h5 class="card-title">Cirugía de cataratas</h5>
-                                    <p class="card-text"><p style="text-align: justify;">La cirug&iacute;a de cataratas es un procedimiento com&uacute;n y seguro para extraer el cristalino del ojo y, en la mayor&iacute;a de los casos, reemplazarlo con una lente artificial. Al ser un procedimiento ambulatorio, no tienes que quedarte en el hospital despu&eacute;s de su realizaci&oacute;n. </p></p>
-                                    <button type="button" class="btn btn-pgco">Continua leyendo</button>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="card text-center shadow">
-                                <div class="card-img-top">
-                                    <img class="w-100" src="{% static 'img/350x200.png'%}" alt="">
-                                </div>
-                                <div class="card-body text-start">
-                                    <h5 class="card-title">Cirugía corneal</h5>
-                                    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit minima impedit eligendi nisi et iste voluptatibus, 
-                                    beatae odit consequatur sit expedita quasi voluptatum illo inventore obcaecati consectetur fugit dolorum magnam quae dolores id veniam aut 
-                                    officia? Fugit at in, nisi ab consequuntur, libero quasi sint adipisci soluta possimus odio aspernatur?</p>
-                                    <button type="button" class="btn btn-pgco">Continua leyendo</button>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="card text-center shadow">
-                                <div class="card-img-top">
-                                    <img class="w-100" src="{% static 'img/350x200.png'%}" alt="">
-                                </div>
-                                <div class="card-body text-start">
-                                    <h5 class="card-title">Cirugía glaucoma</h5>
-                                    <p class="card-text"><p style="text-align: justify;">La trabeculectom&iacute;a (o cirug&iacute;a de filtraci&oacute;n) se utiliza para tratar el glaucoma de &aacute;ngulo abierto y el glaucoma de &aacute;ngulo cerrado cr&oacute;nico. Suele realizarse cuando los medicamentos y el tratamiento con l&aacute;ser han fracasado para reducir la presi&oacute;n ocular lo suficiente como para evitar que una persona sufra da&ntilde;os en la vista.&nbsp;</p></p>
-                                    <button type="button" class="btn btn-pgco">Continua leyendo</button>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="card text-center shadow">
-                                <div class="card-img-top">
-                                    <img class="w-100" src="{% static 'img/350x200.png'%}" alt="">
-                                </div>
-                                <div class="card-body text-start">
-                                    <h5 class="card-title">Cirugía de retina</h5>
-                                    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit minima impedit eligendi nisi et iste voluptatibus, 
-                                    beatae odit consequatur sit expedita quasi voluptatum illo inventore obcaecati consectetur fugit dolorum magnam quae dolores id veniam aut 
-                                    officia? Fugit at in, nisi ab consequuntur, libero quasi sint adipisci soluta possimus odio aspernatur?</p>
-                                    <button type="button" class="btn btn-pgco">Continua leyendo</button>
-                                </div>
-                            </div>
-                        </li>
+                        {%endfor%}
                     </ul>
-                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    {%for i in cirugiasquery%}
+                    <div class="modal fade" id="{{i.url}}" tabindex="-1" aria-labelledby="{{i.url}}" aria-hidden="true">
                         <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
                           <div class="modal-content">
                             <div class="modal-header">
-                              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                              <h5 class="modal-title" id="{{i.titulo}}">{{i.titulo}}</h5>
                               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit minima impedit eligendi nisi et iste voluptatibus, 
-                                    beatae odit consequatur sit expedita quasi voluptatum illo inventore obcaecati consectetur fugit dolorum magnam quae dolores id veniam aut 
-                                    officia? Fugit at in, nisi ab consequuntur, libero quasi sint adipisci soluta possimus odio aspernatur?Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit minima impedit eligendi nisi et iste voluptatibus, 
-                                    beatae odit consequatur sit expedita quasi voluptatum illo inventore obcaecati consectetur fugit dolorum magnam quae dolores id veniam aut 
-                                    officia? Fugit at in, nisi ab consequuntur, libero quasi sint adipisci soluta possimus odio aspernatur?Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit minima impedit eligendi nisi et iste voluptatibus, 
-                                    beatae odit consequatur sit expedita quasi voluptatum illo inventore obcaecati consectetur fugit dolorum magnam quae dolores id veniam aut 
-                                    officia? Fugit at in, nisi ab consequuntur, libero quasi sint adipisci soluta possimus odio aspernatur?Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit minima impedit eligendi nisi et iste voluptatibus, 
-                                    beatae odit consequatur sit expedita quasi voluptatum illo inventore obcaecati consectetur fugit dolorum magnam quae dolores id veniam aut 
-                                    officia? Fugit at in, nisi ab consequuntur, libero quasi sint adipisci soluta possimus odio aspernatur?Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit minima impedit eligendi nisi et iste voluptatibus, 
-                                    beatae odit consequatur sit expedita quasi voluptatum illo inventore obcaecati consectetur fugit dolorum magnam quae dolores id veniam aut 
-                                    officia? Fugit at in, nisi ab consequuntur, libero quasi sint adipisci soluta possimus odio aspernatur?Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit minima impedit eligendi nisi et iste voluptatibus, 
-                                    beatae odit consequatur sit expedita quasi voluptatum illo inventore obcaecati consectetur fugit dolorum magnam quae dolores id veniam aut 
-                                    officia? Fugit at in, nisi ab consequuntur, libero quasi sint adipisci soluta possimus odio aspernatur?Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit minima impedit eligendi nisi et iste voluptatibus, 
-                                    beatae odit consequatur sit expedita quasi voluptatum illo inventore obcaecati consectetur fugit dolorum magnam quae dolores id veniam aut 
-                                    officia? Fugit at in, nisi ab consequuntur, libero quasi sint adipisci soluta possimus odio aspernatur?Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit minima impedit eligendi nisi et iste voluptatibus, 
-                                    beatae odit consequatur sit expedita quasi voluptatum illo inventore obcaecati consectetur fugit dolorum magnam quae dolores id veniam aut 
-                                    officia? Fugit at in, nisi ab consequuntur, libero quasi sint adipisci soluta possimus odio aspernatur?Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit minima impedit eligendi nisi et iste voluptatibus, 
-                                    beatae odit consequatur sit expedita quasi voluptatum illo inventore obcaecati consectetur fugit dolorum magnam quae dolores id veniam aut 
-                                    officia? Fugit at in, nisi ab consequuntur, libero quasi sint adipisci soluta possimus odio aspernatur?Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit minima impedit eligendi nisi et iste voluptatibus, 
-                                    beatae odit consequatur sit expedita quasi voluptatum illo inventore obcaecati consectetur fugit dolorum magnam quae dolores id veniam aut 
-                                    officia? Fugit at in, nisi ab consequuntur, libero quasi sint adipisci soluta possimus odio aspernatur?Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit minima impedit eligendi nisi et iste voluptatibus, 
-                                    beatae odit consequatur sit expedita quasi voluptatum illo inventore obcaecati consectetur fugit dolorum magnam quae dolores id veniam aut 
-                                    officia? Fugit at in, nisi ab consequuntur, libero quasi sint adipisci soluta possimus odio aspernatur?Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit minima impedit eligendi nisi et iste voluptatibus, 
-                                    beatae odit consequatur sit expedita quasi voluptatum illo inventore obcaecati consectetur fugit dolorum magnam quae dolores id veniam aut 
-                                    officia? Fugit at in, nisi ab consequuntur, libero quasi sint adipisci soluta possimus odio aspernatur?
+                                <div class="mx-5 px-5">
+                                    {{i.articulo|safe}}
+                                </div>
                             </div>
                             <div class="modal-footer">
-                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                              <button type="button" class="btn btn-primary">Save changes</button>
+                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                              <button type="button" class="btn btn-primary">Contactanos</button>
                             </div>
                           </div>
                         </div>
                     </div>
+                    {%endfor%}
                 </div>
             </div>
         </div>
@@ -707,7 +604,7 @@
         </div>
     </footer>
     <script src="{% static 'js/bootstrap.bundle.js' %}"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="{% static 'js/jquery-3.6.0.min.js'%}"></script>
     <script src="{% static 'js/lightslider.js' %}"></script>
     <script src="{% static 'js/scripts.js' %}"></script>
     <script src="{% static 'js/efectos.js' %}"></script>
@@ -738,6 +635,14 @@
            });
        });
    </script>
+   <script>
+    $(document).ready(function() {
+      $("#{{url}}").modal("show");
+      $('html, body').animate({
+      scrollTop: $("#{{url}}1").offset().top
+      }, 1);
+    });
+  </script>
    <script>
        var balls = document.getElementsByClassName("ball");
        document.onmousemove = function(){
