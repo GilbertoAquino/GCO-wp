@@ -30,120 +30,31 @@
     </style>
 </head>
 <body>
-    <header class="bg-gco-dark" id="Inicio">
-        <nav class="navbar py-2 navbar-expand-lg navcolor navbar-dark" id="mainNav">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-4 col-sm-12">
-                        <a href="#" class="navbar-brand"><img src="{% static 'img/Logo-s-a.png' %}" id="imglogo" class="p-2 w-60" alt="" srcset=""></a> 
-                    </div>    
-                <button class="navbar-toggler"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#Cmenu"
-                aria-controls="Cmenu"
-                aria-expanded="false"
-                aria-label="Mostrar/Ocultar Navegación"
-                >
-                <span class="navbar-toggler-icon"></span>
-                </button>
-            <div class="col-8 d-flex">
-            <div class="collapse navbar-collapse" id="Cmenu">
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li class="nav-item"><a href="#Inicio" class="nav-link rounded-1 text-white">Inicio</a></li>
-                    <li class="nav-item"><a href="#acerca-de" class="nav-link rounded-1 text-white">Perfil Medico</a></li>
-                    <li class="nav-item"><a href="#Nosotros" class="nav-link rounded-1 text-white">Nosotros</a></li>
-                    <li class="nav-item"><a href="#Servicios" class="nav-link rounded-1 text-white">Servicio</a></li>
-                    <li class="nav-item dropdown">
-                        <div class="btn-group">
-                            <a href="#Equipo" class="nav-link rounded-1 text-white">Equipo</a>
-                            <a href="#Equipo" class="nav-link dropdown-toggle dropdown-toggle-split text-white" 
-                            id="viajes" role="button" data-bs-toggle="dropdown" 
-                            aria-expanded="false"><span class="visually-hidden">Toggle Dropdown</span></a>
-                            <ul class="dropdown-menu">
-                              <li><a class="dropdown-item" href="#">Action</a></li>
-                              <li><a class="dropdown-item" href="#">Another action</a></li>
-                              <li><a class="dropdown-item" href="#">Something else here</a></li>
-                              <li><hr class="dropdown-divider"></li>
-                              <li><a class="dropdown-item" href="#">Separated link</a></li>
-                            </ul>
-                          </div>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <div class="btn-group">
-                            <a href="#Padecimientos" class="nav-link rounded-1 text-white">Padecimientos</a>
-                            <a href="#" class="nav-link dropdown-toggle dropdown-toggle-split text-white" 
-                            id="viajes" role="button" data-bs-toggle="dropdown" 
-                            aria-expanded="false"><span class="visually-hidden">Toggle Dropdown</span></a>
-                            <ul class="dropdown-menu">
-                              <li><a class="dropdown-item" href="#Padecimientos" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Padecimiento 1</a></li>
-                              <li><a class="dropdown-item" href="#">Padecimiento 2</a></li>
-                              <li><a class="dropdown-item" href="#">Padecimiento 3</a></li>
-                            </ul>
-                          </div>
-                    </li>
-                    <li class="nav-item"><a href="#Cirugias" class="nav-link rounded-1 text-white">Cirugias</a></li>
-                    <li class="nav-item me-5"><a href="#contacto" class="nav-link rounded-1 text-white">Contacto</a></li>
-                </ul>
-                <!--form action="" class="d-flex">
-                    <input type="text"
-                    class="form-control me-2"
-                    aria-label="Buscar"
-                    placeholder="Buscar"
-                    >
-                    <button class="btn btn-primary" type="submit">Buscar</button>
-                </form-->
-            </div>
-            </div>
-            </div>
-            </div>
-        </nav>
-    </header>
+    {% include 'index/header.html'%}
     <main>
         <div class="container-fluid-1 mb-5">
             <div class="row">
                 <div class="col-12">
                     <div id="carouselExampleSlidesOnly" class="carousel slide carousel-fade" data-bs-ride="carousel">
                         <div class="carousel-inner">
-                          <div class="carousel-item active" data-bs-interval="9800">
-                            <img src="{% static 'img/gift.gif' %}" class="d-block w-100" alt="...">
-                            <div class="carousel-caption">
-                                <div>
-                                    <img src="{%static 'img/Logo-s-a.png'%}" class="w-75" alt="">
+                          {%for i in caruselquery%}
+                          <div class="carousel-item {%if forloop.counter0 == 0%}active{%endif%}">
+                                <img src="{{i.imagen.url}}" class="d-block w-100"  alt="...">
+                                <div class="carousel-caption">
+                                    <div>
+                                        <img src="{%static 'img/Logo-s-a.png'%}" class="w-75" alt="">
+                                    </div>
+                                    <a href="#contacto"><button class="btn btn-pgco hid">¡Agenda tu cita!</button></a>
+                                    <div class="mt-5">
+                                    </div>
                                 </div>
-                                <a href="#contacto"><button class="btn btn-pgco hid">¡Agenda tu cita!</button></a>
-                                <div class="mt-5">
-                                </div>
-                              </div>
                           </div>
-                          <div class="carousel-item" data-bs-interval="6700">
-                            <img src="{% static 'img/gift1.gif' %}" class="d-block w-100"  alt="...">
-                            <div class="carousel-caption">
-                                <div>
-                                    <img src="{%static 'img/Logo-s-a.png'%}" class="w-75" alt="">
-                                </div>
-                                <a href="#contacto"><button class="btn btn-pgco hid">¡Agenda tu cita!</button></a>
-                                <div class="mt-5">
-                                </div>
-                              </div>
-                          </div>
-                          <div class="carousel-item" data-bs-interval="7300">
-                            <img src="{% static 'img/gift2.gif' %}" class="d-block w-100" alt="...">
-                            <div class="carousel-caption">
-                                <div>
-                                    <img src="{%static 'img/Logo-s-a.png'%}" class="w-75" alt="">
-                                </div>
-                                <a href="#contacto"><button class="btn btn-pgco hid">¡Agenda tu cita!</button></a>
-                                <div class="mt-5">
-                                </div>
-                              </div>
-                          </div>
-                        </div>
+                          {%endfor%}
                       </div>
                 </div>
             </div>
         </div>
-        <div class="container">
+        <!--div class="container">
             <div class="row">
                 <div class="col-12">
                     <section class="main">
@@ -169,9 +80,39 @@
                         </section>
                 </div>
             </div>
+        </div-->
+        <br id="acerca-de">
+        <div class="container my-5" id="acerca-de">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card mb-3 gco-pad text-white shadow-lg rounded">
+                        <div class="row g-0">
+                          <div class="col-md-4 d-flex align-items-center border-end">
+                            <img class="w-100 p-2 rounded-circle" src="{% static 'img/Doctor.jpeg' %}" alt="Doctor">
+                          </div>
+                          <div class="col-md-8">
+                            <div class="card-body">
+                              <h1 class="card-title text-center border-bottom mt-1 mb-4">Perfil Médico</h1>
+                              <p class="card-text"><p>Estancia, Wills Eye Hospital Philadelphia, 2007</p>
+                              <p>C&oacute;rnea y cirug&iacute;a refractiva, UNAM/ Asociaci&oacute;n para evitar la Ceguera en M&eacute;xico, 2008</p>
+                              <p>Metodolog&iacute;a de la investigaci&oacute;n en Oftalmolog&iacute;a, UNAM/ Asociaci&oacute;n para evitar la Ceguera en M&eacute;xico, 2009</p>
+                              <p>Oftalmologia, UNAM/Hospital Ju&aacute;rez de M&eacute;xico, 2007</p>
+                              <p>Maestr&iacute;a en ciencias de la salud, IPN, 2011</p>
+                              <p>Entrenamiento en trasplantes lamelares, Devers Eye Institute Portland, 2010</p>
+                              <p>Fundador y Profesor titular del curso de alta especialidad en c&oacute;rnea y cirug&iacute;a refractiva, UNAM/Hospital Juarez de M&eacute;xico, 2017</p>
+                              <p>Mesa directiva, Centro Mexicano de C&oacute;rnea y Cirug&iacute;a refractiva, 2019</p>
+                              <p>Entrenamiento en reconstrucci&oacute;n de superficie ocular en quemaduras, LV Prasad Eye institute Hyderabad (India), 2017</p>
+                              <p>M&eacute;dico Adjunto servicio de c&oacute;rnea, Asociaci&oacute;n para evitar la ceguera en M&eacute;xico, 2019</p></p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+            </div>
         </div>
-        <hr id="Nosotros" class="height-w">
-        <div class="container mt-5">
+        
+        <br id="Nosotros" class="">
+        <div class="container ">
             <div class="text-center">
                 <h2 class="">Nosotros</h2>
                 <h3 class="text-muted mb-5">Lorem ipsum dolor sit amet consectetur.</h3>
@@ -199,7 +140,7 @@
                 </li>
             </ul>
         </div>
-        <hr id="Servicios" class="mt-5">
+        <br id="Servicios" class="">
         <section class="gco-ser">
             <div class="container pt-5">
                 <div class="row justify-content-center">
@@ -264,8 +205,8 @@
                 </div>
             </div>
         </section>
-        <hr class="mb-5" id="Equipo">
-        <div class="container mt-5" id="portfolio">
+        <br class="mb-5" id="Equipo">
+        <div class="container" id="portfolio">
             <div class="text-center mb-4">
                 <h2 class=" ">Equipo</h2>
                 <h3 class="text-muted">¡Cónoce los equipos que manejamos!</h3>
@@ -308,7 +249,8 @@
                 {%endfor%}
             </div>  
         </div>
-        <section class="gco-pad py-5" id="Padecimientos">
+        <br class="" id="Padecimientos">
+        <section class="gco-pad py-5">
             <div class="container">
                 <div class="row">
                     <div class="text-center text-white col-12 col-lg-4">
@@ -434,7 +376,7 @@
             </div>
         </section>
         
-        <hr id="Cirugias" class="mb-5">
+        <br id="Cirugias" class="">
         <div class="container">
             <div class="row text-center">
                 <h2 class="my-5">Cirugias</h2>
@@ -449,7 +391,7 @@
                                 <div class="card-body text-start">
                                     <h5 class="card-title">{{i.titulo}}</h5>
                                     <p class="card-text">{{i.descripcion|safe}}</p>
-                                    <a href="{{i.url}}"><button type="button" class="btn btn-pgco">{{i.boton}}</button></a>
+                                    <a href="cirugias/{{i.url}}"><button type="button" class="btn btn-pgco">{{i.boton}}</button></a>
                                 </div>
                             </div>
                         </li>
@@ -479,9 +421,9 @@
                 </div>
             </div>
         </div>
-        <hr class="m-5" id="contacto">
+        <br class="" id="contacto">
     </main>
-    <div class="container" >
+    <!--div class="container" >
         <div class="row">
             <div class="col-12 col-lg-4">
                 <div class="text-center">
@@ -546,8 +488,80 @@
                 </div>  
             </div>
         </div>
-    </div>
-    <footer class="bg-gco-dark">
+    </div-->
+    <section class="ser-2-izq py-3">
+        <div class="container my-3">
+            <div class="row">
+                <div class="col-lg-6 col-12">
+                    <div class="card shadow-ga-lg mb-1 bg-gco-dark text-white">
+                        <div class="card-header text-center">
+                            <h3>Contacto</h3>
+                        </div>
+                        <div class="card-body">
+                            {% if cform == None %}
+                                {{text_chido}}
+                            {% else %}
+                            <form method="post" name="contact_form" >
+                                {% if alert == True %}
+                                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                    ¡Gracias por contactarnos! En la brevedad nos comunicaremos contigo.
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                </div>
+                                {% elif alert == False %}
+                                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                    ¡Algo salio mal! Intenta otra vez.
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                </div>
+                                {% endif %}
+                                {% csrf_token %}
+                                    <div class="user-box d-flex mb-1">
+                                        {{cform.Nombre}}
+                                        {{cform.Nombre.errors}}
+                                        {{cform.Apellidos}}
+                                    </div>
+                                    <div class="user-box my-1">
+                                        {{ cform.Email }}
+                                        {{ cform.Email.errors }}
+                                    </div>
+                                    <div class="user-box my-1">
+                                        {{ cform.Telefono }}
+                                        {{ cform.Telefono.errors }}
+                                    </div>
+                                    <div class="user-box my-1">
+                                        {{ cform.Mensaje }}
+                                        {{ cform.Mensaje.errors }}
+                                    </div>
+                                <div class="form-group text-center my-1">
+                                    <button type='submit' class='btn btn-pgco w-75 m-1'><i class="fas fa-envelope"></i> Enviar mensaje por correo</button>
+                                </div>
+                                <div class="text-center">
+                                    <button type='button' class='btn bg-whats w-75 m-1 text-white' onclick="ContactoviaWhats()"><i class="fab fa-whatsapp"></i> Enviar mensaje por WhatsApp</button>
+                                </div>
+                            </form>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-12">
+                    <div class="card shadow-lg mt-1">
+                        <iframe src="https://maps.google.com/maps?q=hospital%20espa%C3%B1ol&t=&z=15&ie=UTF8&iwloc=&output=embed" width="100%" height="600px" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                        <!--iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d119498.61133090078!2d-100.3774322877102!3d20.6153361906092!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d35b8fdc5b9255%3A0x97b094aa561b832f!2sSantiago%20de%20Quer%C3%A9taro%2C%20Qro.!5e0!3m2!1sen!2smx!4v1642457876603!5m2!1sen!2smx" width="100%" height="600px" style="border:0;" allowfullscreen="" loading="lazy"></iframe-->
+                        <!--iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.6631419822365!2d-99.11234298529746!3d19.42695534589571!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1feae5c60a6c5%3A0xf302c6ec5364d4a5!2sVenustiano%20Carranza%2C%20Ciudad%20de%20M%C3%A9xico%2C%20CDMX!5e0!3m2!1ses-419!2smx!4v1641565763448!5m2!1ses-419!2smx" width="100%" height="600px" style="border:0;" allowfullscreen="" loading="lazy"></iframe-->
+                    </div>
+                </div>
+            </div>
+        </div>
+        </section>
+        <script>
+            function ContactoviaWhats(){
+                var Nombre = document.contact_form.Nombre.value;
+                var Apellidos = document.contact_form.Apellidos.value;
+                var Mensaje = document.contact_form.Mensaje.value;
+                var url = "https://wa.me/524422725661?text="
+                window.open(url + "Hola, Mi nombre es "+Nombre+" "+Apellidos+" "+Mensaje)
+            }
+        </script>
+    <!--footer class="bg-gco-dark">
         <div class="container">
             <div class="row">
                 <div class="col-12 col-lg-4">
@@ -594,6 +608,54 @@
                 </div>
             </div>
         </div>
+    </footer-->
+    <footer class="bg-gco-dark text-white container-fluid footer-bg footes-font">
+        <div class="row p-5">
+            <div class="col-12 col-lg-3">
+                <div class="text-center">
+                    <h4 class="mt-4"><i class="fas fa-map-signs me-1"></i>Nos encontramos en:</h4>
+                    <hr class="">
+                <p class=""> Hospital Expañol </p>
+                <p class=""> Ejercito Nacional # 613, Granada, C.P. 11520 Ciudad de México. Tel. 5255 9600 </p>
+                </div>
+                <div class="text-center">
+                    <h4 class="mt-4"><i class="fas fa-clock me-1"></i>Horario</h4>
+                    <hr>
+                    <p>Lunes a Viernes de 09:00 a 18:00</p>
+                </div>
+            </div>
+            <div class="col-lg-1"></div>
+            <div class="col-12 col-lg-3">
+                <div class="m-0 my-lg-2 footer-logo text-center">
+                     <img class="w-100" src="{% static 'img/Logo-s.png'%}">
+                </div>
+                <div class="text-center my-4">
+                    Correo electrónico:
+                    <p>info@human-mexico.com</p>
+                </div>
+                <div class="text-center my-2">
+                    Teléfono: 442 272 5661
+                </div>
+                <div class="text-center">
+                    <i class="fab fa-whatsapp color-whats fs-2"></i>
+                    <a target="_blank" href="https://wa.me/524422725661">
+                        
+                        <button type="button" class="btn bg-whats text-white my-2">Envia un mensaje</button></a>
+                </div>
+            </div>
+            <div class="col-lg-1"></div>
+            <div class="col-12 col-lg-3">
+                <div class="text-center text-lg-start">
+                    <h4 class="mt-4 text-center">Siguenos en:</h4>
+                </div>
+                <hr class="">
+                <ul class="d-flex justify-content-center">
+                    <li class="mb-1 ms-4"><a href="https://www.facebook.com/Humanmexico/" class="p-1"><i class="RS fa-3x fab fa-facebook"></i></a></li>
+                    <li class="mb-1 ms-4"><a href="https://www.linkedin.com/company/human-m%C3%A9xico/" class="p-1"><i class="RS fa-3x fab fa-linkedin"></i></a></li>
+                    <li class="mb-1 ms-4"><a href="https://twitter.com/Human_Mex" class="p-1"><i class="RS fa-3x fab fa-twitter"></i></a></li>
+                </ul>
+            </div>
+        </div>
         <div class="container-fluid mt-5">
             <div class="row">
                 <hr class="text-white">
@@ -602,7 +664,10 @@
                 </div>
             </div>
         </div>
-    </footer>
+</footer>
+<a href="#" class="float">
+    <i class="fa-solid fa-star-of-life my-float"></i>
+    </a>
     <script src="{% static 'js/bootstrap.bundle.js' %}"></script>
     <script src="{% static 'js/jquery-3.6.0.min.js'%}"></script>
     <script src="{% static 'js/lightslider.js' %}"></script>

@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.views import View
 from .models import *
+from .forms_ga import *
 
 class index(View):
     def get(self,request,url=""):
@@ -8,12 +9,21 @@ class index(View):
         serviciosquery = Servicios.objects.all()
         equiposquery = Equipo.objects.all()
         padquery = Padecimientos.objects.all()
+        caruselquery = Carrusel.objects.all()
+        cform = contactoForm()
         return render(request,"index/index.html",{'cirugiasquery':cirugiasquery,
             'serviciosquery':serviciosquery,
             'equipoquery':equiposquery,
             'padquery':padquery,
+            'caruselquery':caruselquery,
             'url':url,
+            'cform':cform
         })
 
+class cirugias_blog(View):
+    def get(self,request,url):
+        cirugia = Cirugias.objects.all().filter(url=url)
+        cirugiasquery = Cirugias.objects.all()
+        return render(request,"index/article.html",{'cirugia':cirugia[0],'cirugiasquery':cirugiasquery,})
 #class index2(View):
 #    def get()

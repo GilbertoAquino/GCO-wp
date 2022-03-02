@@ -4,6 +4,103 @@ body{
   font-family: 'Montserrat';
   font-size: 16px;
 }
+.float{
+	position:fixed;
+	width:60px;
+	height:60px;
+	bottom:40px;
+	right:40px;
+	background-color:#0C9;
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+	box-shadow: 2px 2px 3px #999;
+}
+
+.my-float{
+	margin-top:22px;
+}
+.titlebg{
+  background: rgba(0,0,0,0.5);
+}
+.bg-facebook{
+  background-color:#007BF3;
+}
+.color-whats{
+    color: #25D366;
+}
+.color-facebook{
+  color: #007BF3;
+}
+.color-twitter{
+  color: #1DA1F2;
+}
+.color-instagram{
+  color: #5271FF;
+}
+.color-linkedin{
+  color: #0E76A8;
+}
+.bg-whats{
+  background-color: #25D366;
+}
+.bg-twitter{
+  background-color: #1DA1F2;;
+ }
+.bg-linkedin{
+  background-color:#0E76A8;
+}
+.btn-whats {
+  color: #fff;
+  background-color: #128C7E;
+  border-color: #128C7E;
+}
+.user-box {
+  position: relative;
+}
+.responsive_text_crs{
+    font-size:10px;
+}
+ .user-box input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #02839A;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #02839A;
+  outline: none;
+  background: transparent;
+}
+.user-box textarea {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #02839A;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #02839A;
+  outline: none;
+  background: transparent;
+}
+ .user-box label {
+  position: absolute;
+  top:0;
+  left: 0;
+  padding: 10px 0;
+  font-size: 16px;
+  color: black;
+  pointer-events: none;
+  transition: .5s;
+}
+
+ .user-box input:focus ~ label,
+ .user-box input:valid ~ label {
+  top: -20px;
+  left: 0;
+  color: #F7CC41;
+  font-size: 12px;
+}
 .gco-pad{
   background: url('../img/mosaic.png');
 	background-repeat: repeat;
@@ -53,6 +150,9 @@ body{
 }
 .RS:hover{
   color: #02839A;
+}
+.icon{
+  size: 1000px;
 }
 .btn-pgco {
     color: #fff;
@@ -205,10 +305,21 @@ body{
   .hid{
     margin-top: 10px;
   }
-  
+  .wid{
+    width: auto;
+  }
+  .cwid{
+    width: 100%;
+  }
   @media (min-width: 768px) {
     .timeline:before {
       left: 50%;
+    }
+    .cwid{
+      width: 15%;
+    }
+    .wid{
+      width: 100%;
     }
     .hid{
       margin-top:50px;

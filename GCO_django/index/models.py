@@ -39,3 +39,10 @@ class Padecimientos(models.Model):
 
     def __str__(self):
         return str(self.titulo)
+
+class Carrusel(models.Model):
+    titulo = models.CharField(max_length=20,default="1")
+    imagen = models.ImageField(upload_to="img")
+
+    def __str__(self):
+        return str(self.titulo)
