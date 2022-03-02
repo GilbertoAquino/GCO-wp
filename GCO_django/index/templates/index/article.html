@@ -39,7 +39,7 @@
                         <div class="carousel-inner">
                           <div class="carousel-item active">
                                 <img src="{% static 'img/blogcirugias.png'%}" class="d-block wid"  alt="...">
-                                <div class="carousel-caption">
+                                <div class="carousel-caption mt-5">
                                     <div class="">
                                         <img src="{%static 'img/Logo-s-a-noname.png'%}" class="cwid" alt="">
                                     </div>
@@ -163,11 +163,9 @@
             </div>
         </div>
 </footer>
-<a href="#" class="float">
-    <i class="fa fa-plus my-float"></i>
-    </a>
+{%include 'index/floatbutton.html'%}
     <script src="{% static 'js/bootstrap.bundle.js' %}"></script>
-    <script src="{% static 'js/jquery-3.6.0.min.js'%}"></script>
+    <script type='text/javascript' src="{% static 'js/jquery-3.6.0.min.js'%}"></script>
     <script src="{% static 'js/lightslider.js' %}"></script>
     <script src="{% static 'js/scripts.js' %}"></script>
     <script src="{% static 'js/parallax.js' %}"></script>

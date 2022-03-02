@@ -4,17 +4,30 @@ body{
   font-family: 'Montserrat';
   font-size: 16px;
 }
+.intento{
+  position: fixed;
+  bottom: 90px;
+  right:0px;
+  z-index: 101;
+  visibility: hidden;
+  background-color: #1A1A1A;
+  width: 100%; 
+}
 .float{
 	position:fixed;
 	width:60px;
 	height:60px;
-	bottom:40px;
-	right:40px;
-	background-color:#0C9;
+	bottom:20px;
+	right:20px;
+	background:#02839A;
 	color:#FFF;
 	border-radius:50px;
 	text-align:center;
 	box-shadow: 2px 2px 3px #999;
+  z-index: 100;
+}
+.float:hover{
+  color:#FFF;
 }
 
 .my-float{
@@ -303,7 +316,7 @@ body{
     margin-bottom: 0;
   }
   .hid{
-    margin-top: 10px;
+    margin-top: 20px;
   }
   .wid{
     width: auto;
@@ -311,18 +324,36 @@ body{
   .cwid{
     width: 100%;
   }
+  .fonts{
+    font-size: 10px;
+  }
   @media (min-width: 768px) {
+    .fonts{
+      font-size: 16px;
+    }
+    .intento{
+      font-size: 14px;
+      position: fixed;
+      bottom: 90px;
+      right:5px;
+      z-index: 101;
+      visibility: hidden;
+      background-color: #1A1A1A;
+      width: 50%; 
+    }
     .timeline:before {
       left: 50%;
     }
     .cwid{
       width: 15%;
+      margin-top: 100px;
     }
     .wid{
       width: 100%;
     }
     .hid{
-      margin-top:50px;
+      margin-top:10px;
+      margin-bottom: 10px;
     }
     .timeline > li {
       min-height: 100px;

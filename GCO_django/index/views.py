@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from django.views import View
 from .models import *
 from .forms_ga import *
@@ -27,3 +27,6 @@ class cirugias_blog(View):
         return render(request,"index/article.html",{'cirugia':cirugia[0],'cirugiasquery':cirugiasquery,})
 #class index2(View):
 #    def get()
+
+def redirects(request,url):
+    return redirect("../"+str(url))

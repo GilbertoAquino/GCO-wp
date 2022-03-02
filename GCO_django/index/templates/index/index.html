@@ -150,14 +150,10 @@
                         </div>
                         <div class="card shadow-lg">
                         <div class="d-flex align-items-start">
-                            <div class="nav flex-column nav-pills me-3" style="background-color: #02839A;" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                            <div class="nav flex-column nav-pills" id="v-pills-tab" style="background-color: #02839A;" role="tablist" aria-orientation="vertical">
                               {%for i in serviciosquery%}
-                              <button class="nav-link py-5 {%if forloop.counter0 == 0%}active{%endif%}" id="v-pills-{{forloop.counter0}}-tab" data-bs-toggle="pill" data-bs-target="#v-pills-{{forloop.counter0}}" type="button" role="tab" aria-controls="v-pills-{{forloop.counter0}}" aria-selected="{%if forloop.counter0 == 0%}true{%else%}false{%endif%}">{{i.boton}}</button>
+                              <button class="nav-link fonts py-5 {%if forloop.counter0 == 0%}active{%endif%}"  id="v-pills-{{forloop.counter0}}-tab" data-bs-toggle="pill" data-bs-target="#v-pills-{{forloop.counter0}}" type="button" role="tab" aria-controls="v-pills-{{forloop.counter0}}" aria-selected="{%if forloop.counter0 == 0%}true{%else%}false{%endif%}">{{i.boton}}</button>
                               {%endfor%}
-                              <button class="nav-link py-5" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-contentM" type="button" role="tab" aria-controls="v-pills-home" aria-selected="false">Servicio 1</button>
-                              <button class="nav-link py-5" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-Coordinadora" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">Servicio 2</button>
-                              <button class="nav-link py-5" id="v-pills-messages-tab" data-bs-toggle="pill" data-bs-target="#v-pills-Redactora" type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false">Servicio 3</button>
-                              <button class="nav-link py-5" id="v-pills-settings-tab" data-bs-toggle="pill" data-bs-target="#v-pills-Editora" type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false">Servicio 4</button>
                             </div>
                             <div class="tab-content m-2" id="v-pills-tabContent">
                                 {%for i in serviciosquery%}
@@ -165,39 +161,11 @@
                                     <div class="text-center me-3">
                                         <p class="display-5">{{i.titulo}}</p>
                                         <img class="my-1 img-tab-w" style="border-color: black; border-style: solid;" src="{{i.imagen.url}}" alt="">
-                                        <p class="texto m-4">{{i.descripcion}}</p>
+                                        <p class="texto m-4" style="text-align: justify;">{{i.descripcion}}</p>
                                         <a target="_blank" href="https://wa.me/525555555555" ><button type="button" class="btn btn-pgco">Agenda tu cita</button></a>
                                     </div>
                                 </div>
                                 {%endfor%}
-                                <div class="tab-pane fade show" id="v-pills-contentM" role="tabpanel" aria-labelledby="v-pills-home-tab">
-                                    <div class="text-center me-3">
-                                        <p class="display-5">Servicio 1</p>
-                                        <img class="my-1 img-tab-w" style="border-color: black; border-style: solid;" src="{% static 'img/dummy-720x480.png'%}" alt="">
-                                        <p class="texto m-4">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora eum, consequatur magnam qui illo deleniti autem saepe laudantium eos odit?</p>
-                                    </div>
-                                </div>
-                            <div class="tab-pane fade" id="v-pills-Coordinadora" role="tabpanel" aria-labelledby="v-pills-profile-tab">
-                                <div class="text-center me-3">
-                                    <p class="display-5">Servicio 2</p>
-                                    <img class="my-1 img-tab-w" style="border-color: black; border-style: solid;" src="{% static 'img/dummy-720x480.png'%}" alt="">
-                                    <p class="texto m-4">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora eum, consequatur magnam qui illo deleniti autem saepe laudantium eos odit?</p>
-                                </div>
-                            </div>
-                            <div class="tab-pane fade" id="v-pills-Redactora" role="tabpanel" aria-labelledby="v-pills-messages-tab">
-                                <div class="text-center me-3">
-                                    <p class="display-5">Servicio 3</p>
-                                    <img class="my-1 img-tab-w" style="border-color: black; border-style: solid;" src="{% static 'img/dummy-720x480.png'%}" alt="">
-                                    <p class="texto m-4">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora eum, consequatur magnam qui illo deleniti autem saepe laudantium eos odit?</p>
-                                </div>
-                            </div>
-                            <div class="tab-pane fade" id="v-pills-Editora" role="tabpanel" aria-labelledby="v-pills-settings-tab">
-                                <div class="text-center my-1">
-                                    <p class="display-5">Servicio 4</p>
-                                    <img class="my-1 img-tab-w" style="border-color: black; border-style: solid;" src="{% static 'img/dummy-720x480.png'%}" alt="">
-                                    <p class="texto m-4">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora eum, consequatur magnam qui illo deleniti autem saepe laudantium eos odit?</p>
-                                </div>
-                            </div>
                             </div>
                           </div>
                         </div>
@@ -235,7 +203,7 @@
                           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <div class="mx-5 px-5">
+                            <div class="mx-2">
                                 {{i.articulo|safe}}
                             </div>
                         </div>
@@ -665,9 +633,7 @@
             </div>
         </div>
 </footer>
-<a href="#" class="float">
-    <i class="fa-solid fa-star-of-life my-float"></i>
-    </a>
+{%include 'index/floatbutton.html'%}
     <script src="{% static 'js/bootstrap.bundle.js' %}"></script>
     <script src="{% static 'js/jquery-3.6.0.min.js'%}"></script>
     <script src="{% static 'js/lightslider.js' %}"></script>
@@ -704,7 +670,7 @@
     $(document).ready(function() {
       $("#{{url}}").modal("show");
       $('html, body').animate({
-      scrollTop: $("#{{url}}1").offset().top
+      scrollTop: $("#Equipo").offset().top
       }, 1);
     });
   </script>

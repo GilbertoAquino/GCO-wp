@@ -6154,7 +6154,7 @@ textarea.form-control-lg {
 .carousel-caption {
   position: absolute;
   right: 15%;
-  bottom: 1.25rem;
+  bottom: -1rem;
   left: 15%;
   padding-top: 1.25rem;
   padding-bottom: 1.25rem;

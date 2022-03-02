@@ -1,0 +1,33 @@
+{%load static%}
+<a class="float" id="floatbtn" onclick="myfunction()">
+    <i id="iconfab" class="fas fa-angle-double-up my-float"></i>
+</a>
+<div class="intento" id="#intento2">
+    <h2 class="text-white">Aqui el widget de doctoralia para que los usuarios reserven.</h2>
+    <img class="w-100" src="{%static 'img/intentowidget.png'%}">
+</div>
+<script>
+    function myfunction(){
+        var hola = document.getElementsByClassName("intento")[0];
+        var icon = document.body.querySelector("#iconfab");
+        var btn = document.body.querySelector("#floatbtn");
+        if(hola.style.visibility==""){
+            hola.style.visibility="visible";
+            icon.classList.remove("fa-angle-double-up");
+            icon.classList.add("fa-angle-double-down");
+            btn.style.background="#F7CC41";
+        }
+        else if (hola.style.visibility=="visible"){
+            hola.style.visibility="hidden";
+            icon.classList.add("fa-angle-double-up");
+            icon.classList.remove("fa-angle-double-down");
+            btn.style.background="#02839A";
+        }
+        else if (hola.style.visibility="hidden"){
+            hola.style.visibility="visible";
+            icon.classList.remove("fa-angle-double-up");
+            icon.classList.add("fa-angle-double-down");
+            btn.style.background="#F7CC41";
+        }
+    };
+</script>
