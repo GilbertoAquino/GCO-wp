@@ -1,8 +1,27 @@
 body{
-  background: url('../img/so-white.png');
+  background: #ffff/*rl('../img/so-white.png');*/
 	background-repeat: repeat;
   font-family: 'Montserrat';
   font-size: 16px;
+}
+.float2{
+  position:fixed;
+  width:35px;
+  height:35px;
+  /*background-color:#0C9;*/
+  right: 0px;
+  color:#FFF;
+  text-align:center;
+  box-shadow: 2px 2px 3px #999;
+  z-index: 100;
+}
+.my-float2{
+  color: #FFF;
+  font-size: 25px;
+  margin-top:5px;
+}
+.card-h{
+  height: 38rem;
 }
 .intento{
   position: fixed;
@@ -53,6 +72,10 @@ body{
 }
 .color-linkedin{
   color: #0E76A8;
+}
+.bg-instagram{
+  background: #d6249f;
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
 }
 .bg-whats{
   background-color: #25D366;

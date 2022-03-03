@@ -352,7 +352,7 @@
                     <ul id="content-slider" class="content-slider">
                         {%for i in cirugiasquery%}
                         <li>
-                            <div class="card text-center shadow" id="{{i.url}}1">
+                            <div class="card card-h text-center shadow" id="{{i.url}}1">
                                 <div class="card-img-top">
                                     <img class="w-100" src="{{i.imagen.url}}" alt="">
                                 </div>
@@ -618,9 +618,8 @@
                 </div>
                 <hr class="">
                 <ul class="d-flex justify-content-center">
-                    <li class="mb-1 ms-4"><a href="https://www.facebook.com/Humanmexico/" class="p-1"><i class="RS fa-3x fab fa-facebook"></i></a></li>
-                    <li class="mb-1 ms-4"><a href="https://www.linkedin.com/company/human-m%C3%A9xico/" class="p-1"><i class="RS fa-3x fab fa-linkedin"></i></a></li>
-                    <li class="mb-1 ms-4"><a href="https://twitter.com/Human_Mex" class="p-1"><i class="RS fa-3x fab fa-twitter"></i></a></li>
+                    <li class="mb-1 ms-4"><a href="https://www.facebook.com/Humanmexico/" class="p-1"><i class="RS fa-2x fab fa-facebook"></i></a></li>
+                    <li class="mb-1 ms-4"><a href="https://twitter.com/Human_Mex" class="p-1"><i class="RS fa-2x fab fa-instagram"></i></a></li>
                 </ul>
             </div>
         </div>
@@ -633,6 +632,9 @@
             </div>
         </div>
 </footer>
+    <a href="https://www.facebook.com/Humanmexico/" class="float2 bg-facebook" style="bottom:370px;"> <i class="fab fa-facebook my-float2"></i> </a>
+    <a href="https://www.linkedin.com/company/human-m%C3%A9xico/" class="float2 bg-instagram" style="bottom:335px;"> <i class="fab fa-instagram my-float2"></i> </a>
+    <a href="https://wa.me/524422725661" style="bottom:300px;" class="float2 bg-whats"> <i class="fab fa-whatsapp my-float2"></i> </a>
 {%include 'index/floatbutton.html'%}
     <script src="{% static 'js/bootstrap.bundle.js' %}"></script>
     <script src="{% static 'js/jquery-3.6.0.min.js'%}"></script>
@@ -643,14 +645,14 @@
     <script>
         $(document).ready(function() {
            $("#content-slider").lightSlider({
-               item:3,
+               item:4,
                loop:true,
                keyPress:true,
                responsive: [
                {
                    breakpoint: 1000,
                    settings: {
-                       item: 2,
+                       item: 3,
                        slideMove: 1,
                        slideMargin: 6,
                    }
@@ -658,7 +660,7 @@
                {
                    breakpoint: 768,
                    settings: {
-                       item: 1,
+                       item: 2,
                        slideMove: 1
                    }
                }
