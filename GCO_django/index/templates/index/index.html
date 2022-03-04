@@ -38,7 +38,7 @@
                     <div id="carouselExampleSlidesOnly" class="carousel slide carousel-fade" data-bs-ride="carousel">
                         <div class="carousel-inner">
                           {%for i in caruselquery%}
-                          <div class="carousel-item {%if forloop.counter0 == 0%}active{%endif%}">
+                          <div class="carousel-item {%if forloop.counter0 == 0%}active{%endif%}" data-bs-interval="5000">
                                 <img src="{{i.imagen.url}}" class="d-block w-100"  alt="...">
                                 <div class="carousel-caption">
                                     <div>
@@ -110,7 +110,7 @@
                 </div>
             </div>
         </div>
-        
+
         <br id="Nosotros" class="">
         <div class="container ">
             <div class="text-center">
@@ -215,7 +215,7 @@
                     </div>
                 </div>
                 {%endfor%}
-            </div>  
+            </div>
         </div>
         <br class="" id="Padecimientos">
         <section class="gco-pad py-5">
@@ -227,7 +227,7 @@
                         <div class="eyes">
                             <div class="eye">
                                 <div class="ball">
-                                    
+
                                 </div>
                             </div>
                         </div>
@@ -278,8 +278,8 @@
                                   </div>
                                   <div class="card-body">
                                       <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste ipsa, excepturi odit amet enim cum.
-                                          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Culpa ea, at, nesciunt mollitia quasi obcaecati libero vero accusamus facilis beatae eius maxime 
-                                          asperiores quo nostrum velit temporibus dolor, harum dignissimos exercitationem. Ipsam eligendi illo labore natus rem esse cupiditate. 
+                                          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Culpa ea, at, nesciunt mollitia quasi obcaecati libero vero accusamus facilis beatae eius maxime
+                                          asperiores quo nostrum velit temporibus dolor, harum dignissimos exercitationem. Ipsam eligendi illo labore natus rem esse cupiditate.
                                           Assumenda quae nobis deleniti ipsum fugiat sapiente nostrum ipsa quam incidunt.
                                       </p>
                                   </div>
@@ -304,8 +304,8 @@
                                     </div>
                                     <div class="card-body">
                                         <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste ipsa, excepturi odit amet enim cum.
-                                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Culpa ea, at, nesciunt mollitia quasi obcaecati libero vero accusamus facilis beatae eius maxime 
-                                            asperiores quo nostrum velit temporibus dolor, harum dignissimos exercitationem. Ipsam eligendi illo labore natus rem esse cupiditate. 
+                                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Culpa ea, at, nesciunt mollitia quasi obcaecati libero vero accusamus facilis beatae eius maxime
+                                            asperiores quo nostrum velit temporibus dolor, harum dignissimos exercitationem. Ipsam eligendi illo labore natus rem esse cupiditate.
                                             Assumenda quae nobis deleniti ipsum fugiat sapiente nostrum ipsa quam incidunt.
                                         </p>
                                     </div>
@@ -330,8 +330,8 @@
                                     </div>
                                     <div class="card-body">
                                         <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste ipsa, excepturi odit amet enim cum.
-                                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Culpa ea, at, nesciunt mollitia quasi obcaecati libero vero accusamus facilis beatae eius maxime 
-                                            asperiores quo nostrum velit temporibus dolor, harum dignissimos exercitationem. Ipsam eligendi illo labore natus rem esse cupiditate. 
+                                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Culpa ea, at, nesciunt mollitia quasi obcaecati libero vero accusamus facilis beatae eius maxime
+                                            asperiores quo nostrum velit temporibus dolor, harum dignissimos exercitationem. Ipsam eligendi illo labore natus rem esse cupiditate.
                                             Assumenda quae nobis deleniti ipsum fugiat sapiente nostrum ipsa quam incidunt.
                                         </p>
                                     </div>
@@ -343,7 +343,7 @@
                 </div>
             </div>
         </section>
-        
+
         <br id="Cirugias" class="">
         <div class="container">
             <div class="row text-center">
@@ -413,14 +413,14 @@
                 <div class="mb-4">
                     Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quo, autem!
                 </div>
-                
+
             </div>
             <div class="col-lg-4">
                 <div class="card my-2 shadow-lg">
                     <div class="card-header text-center">
                         <h3>Agenda tu cita</h3>
                     </div>
-                    <div class="card-body"> 
+                    <div class="card-body">
                         <form action="/" method="post">
                             <label for="NombreForm" class="my-2">Escribe tu nombre</label>
                             <div class="form-group d-flex">
@@ -453,7 +453,7 @@
                     <div class="card-body">
                         <div class="mapouter"><div class="gmap_canvas"><iframe width=100% height=400px id="gmap_canvas" src="https://maps.google.com/maps?q=hospital%20espa%C3%B1ol&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><style>.mapouter{position:relative;text-align:right;height:100%;width:100%;}</style><style>.gmap_canvas {overflow:hidden;background:none!important;height:100%;width:100%;}</style></div></div>
                     </div>
-                </div>  
+                </div>
             </div>
         </div>
     </div-->
@@ -551,7 +551,7 @@
                         <h2 class="text-white mt-4">Ubicación:</h2>
                     </div>
                     <hr class="text-white">
-                    <p class="text-white">Ejercito Nacional # 613, Granada, C.P. 11520 Ciudad de México. Tel. 5255 9600 
+                    <p class="text-white">Ejercito Nacional # 613, Granada, C.P. 11520 Ciudad de México. Tel. 5255 9600
                     </p>
                     <div class="mt-2 p-2 text-center">
                         <button type="button" class="btn btn-info">Agenda tu cita</button>
@@ -607,7 +607,7 @@
                 <div class="text-center">
                     <i class="fab fa-whatsapp color-whats fs-2"></i>
                     <a target="_blank" href="https://wa.me/524422725661">
-                        
+
                         <button type="button" class="btn bg-whats text-white my-2">Envia un mensaje</button></a>
                 </div>
             </div>
@@ -686,13 +686,12 @@
             if (x_int > 100){
                 x = "100%"
             }
-                console.log(x_int)
                 balls[i].style.left = x;
                 balls[i].style.top = y;
                 balls[i].style.transform = "translate(-"+x+",-"+y+")";
        }
        }
-       
+
    </script>
 </body>
 </html>

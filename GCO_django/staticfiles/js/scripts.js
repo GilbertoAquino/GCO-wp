@@ -5,18 +5,18 @@
 */
 //
 // Scripts
-// 
+//
 window.addEventListener("resize",function(event){
     const navbarCollapsible = document.body.querySelector('#mainNav');
     const imglogo = document.body.querySelector('#imglogo');
-    const carrousel_img = document.body.querySelector("#crs_img");
+    //const carrousel_img = document.body.querySelector("#crs_img");
     if ($(window).width() < 980){
         navbarCollapsible.classList.remove('navbar-expand');
         //carrousel_img.classList.remove('w-100');
     }
     else{
         navbarCollapsible.classList.add('navbar-expand');
-        carrousel_img.classList.add('w-100');
+        //carrousel_img.classList.add('w-100');
     }
 },true);
 document.addEventListener("resize",function(){
@@ -38,7 +38,7 @@ window.addEventListener('DOMContentLoaded', event => {
             if ($(window).width() < 980){
                 navbarCollapsible.classList.remove('navbar-expand');
             }
-    
+
         } else {
             navbarCollapsible.classList.add('navbar-shrink');
             navbarCollapsible.classList.remove('navbar-expand');
@@ -52,8 +52,8 @@ window.addEventListener('DOMContentLoaded', event => {
             navbarCollapsible.classList.remove('navbar-expand');
         }
     };
-    
-    // Shrink the navbar 
+
+    // Shrink the navbar
     navbarShrink();
 
     // Shrink the navbar when page is scrolled

@@ -2,7 +2,7 @@ from django.db import models
 
 class Cirugias(models.Model):
     imagen = models.ImageField(upload_to="img")
-    titulo = models.CharField(max_length=25)
+    titulo = models.CharField(max_length=200)
     descripcion = models.CharField(max_length=600,default="Escribe un texto...")
     boton = models.CharField(max_length=20,default="Continua leyendo")
     articulo = models.TextField(default="Escribe un artículo...")
@@ -43,6 +43,7 @@ class Padecimientos(models.Model):
 class Carrusel(models.Model):
     titulo = models.CharField(max_length=20,default="1")
     imagen = models.ImageField(upload_to="img")
+    intervalo = models.IntegerField(default=5000)
 
     def __str__(self):
         return str(self.titulo)
