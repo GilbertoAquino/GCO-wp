@@ -31,8 +31,10 @@
                         id="viajes" role="button" data-bs-toggle="dropdown" 
                         aria-expanded="false"><span class="visually-hidden">Toggle Dropdown</span></a>
                         <ul class="dropdown-menu">
+                            <li><p class="dropdown-item disabled">Conoce nuestras cirugías</p></li>
+                            <li><hr class="dropdown-divider"></li>
                           {%for i in cirugiasquery%}
-                            <li><a class="dropdown-item" href="cirugias/{{i.url}}">{{i.titulo}}</a></li>
+                            <li><a class="dropdown-item" href="cirugias/{{i.url}}">- {{i.titulo}}</a></li>
                           {%endfor%}
                         </ul>
                       </div>

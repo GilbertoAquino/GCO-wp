@@ -64,12 +64,12 @@
         </article>
         <div class="container">
             <div class="row text-center">
-                <h2 class="mb-4">¡Conoce más sobre nuestras cirugias!</h2>
+                <h2 class="my-5">¡Conoce más sobre nuestras cirugías!</h2>
                 <div class="item">
                     <ul id="content-slider" class="content-slider">
                         {%for i in cirugiasquery%}
                         <li>
-                            <div class="card text-center shadow" id="{{i.url}}1">
+                            <div class="card card-h text-center shadow" id="{{i.url}}1">
                                 <div class="card-img-top">
                                     <img class="w-100" src="{{i.imagen.url}}" alt="">
                                 </div>
@@ -163,6 +163,9 @@
             </div>
         </div>
 </footer>
+    <a href="https://www.facebook.com/GCorneaYOftalmologia" class="float2 bg-facebook" style="bottom:370px;"> <i class="fab fa-facebook my-float2"></i> </a>
+    <a href="https://www.linkedin.com/company/human-m%C3%A9xico/" class="float2 bg-instagram" style="bottom:335px;"> <i class="fab fa-instagram my-float2"></i> </a>
+    <a href="https://wa.me/524422725661" style="bottom:300px;" class="float2 bg-whats"> <i class="fab fa-whatsapp my-float2"></i> </a>
 {%include 'index/floatbutton.html'%}
     <script src="{% static 'js/bootstrap.bundle.js' %}"></script>
     <script type='text/javascript' src="{% static 'js/jquery-3.6.0.min.js'%}"></script>
@@ -172,14 +175,14 @@
     <script>
         $(document).ready(function() {
            $("#content-slider").lightSlider({
-               item:3,
+               item:4,
                loop:true,
                keyPress:true,
                responsive: [
                {
                    breakpoint: 1000,
                    settings: {
-                       item: 2,
+                       item: 3,
                        slideMove: 1,
                        slideMargin: 6,
                    }

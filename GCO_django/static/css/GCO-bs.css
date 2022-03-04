@@ -138,13 +138,13 @@ body{
   font-size: 12px;
 }
 .gco-pad{
-  background: url('../img/mosaic.png');
-	background-repeat: repeat;
+  background: #1A1A1A;/*url('../img/mosaic.png');
+	background-repeat: repeat;*/
 }
 .gco-ser{
-  background: url('../img/mosaic.png');
+  background: #1A1A1A;/* url('../img/mosaic.png');
 	background-repeat: repeat;
-  padding-bottom: 100px;
+  padding-bottom: 100px;*/
 }
 .eyes{
   position: relative;
