@@ -1,0 +1,697 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GCO</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css'%}">
+    <link rel="stylesheet" href="{% static 'css/GCO-bs.css'%}">
+    <link rel="stylesheet" href="{% static 'css/lightslider.css' %}">
+    <link rel="stylesheet" href="{% static 'css/acerca-de.css' %}">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+    <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" crossorigin="anonymous"></script>
+    <style>
+        ul{
+			list-style: none outside none;
+		    padding-left: 0;
+            margin: 0;
+		}
+        a{
+            text-decoration: none;
+        }
+        .container-fluid-1{
+            padding-left: 0rem;
+            padding-right: 0rem;
+            overflow: hidden;
+          }
+    </style>
+</head>
+<body>
+    {% include 'index/header.html'%}
+    <main>
+        <div class="container-fluid-1 mb-5">
+            <div class="row">
+                <div class="col-12">
+                    <div id="carouselExampleSlidesOnly" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                          {%for i in caruselquery%}
+                          <div class="carousel-item {%if forloop.counter0 == 0%}active{%endif%}" data-bs-interval="5000">
+                                <img src="{{i.imagen.url}}" class="d-block w-100"  alt="carrusel">
+                                <div class="carousel-caption">
+                                    <div>
+                                        <img src="{%static 'img/Logo-s-a.png'%}" class="w-75" alt="">
+                                    </div>
+                                    <a href="#contacto"><button class="btn btn-pgco hid">¡Agenda tu cita!</button></a>
+                                    <div class="mt-5">
+                                    </div>
+                                </div>
+                          </div>
+                          {%endfor%}
+                      </div>
+                </div>
+            </div>
+        </div>
+        <!--div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <section class="main">
+                        <section class="acerca-de" id="acerca-de">
+                            <div class="contenedor">
+                                <div class="foto">
+                                    <img src="{% static 'img/ojo.png'%}" alt="">
+                                </div>
+                                <article>
+                                    <h3>Perfil Médico</h3>
+                                    <p>Estancia, Wills Eye Hospital Philadelphia, 2007</p>
+<p>C&oacute;rnea y cirug&iacute;a refractiva, UNAM/ Asociaci&oacute;n para evitar la Ceguera en M&eacute;xico, 2008</p>
+<p>Metodolog&iacute;a de la investigaci&oacute;n en Oftalmolog&iacute;a, UNAM/ Asociaci&oacute;n para evitar la Ceguera en M&eacute;xico, 2009</p>
+<p>Oftalmologia, UNAM/Hospital Ju&aacute;rez de M&eacute;xico, 2007</p>
+<p>Maestr&iacute;a en ciencias de la salud, IPN, 2011</p>
+<p>Entrenamiento en trasplantes lamelares, Devers Eye Institute Portland, 2010</p>
+<p>Fundador y Profesor titular del curso de alta especialidad en c&oacute;rnea y cirug&iacute;a refractiva, UNAM/Hospital Juarez de M&eacute;xico, 2017</p>
+<p>Mesa directiva, Centro Mexicano de C&oacute;rnea y Cirug&iacute;a refractiva, 2019</p>
+<p>Entrenamiento en reconstrucci&oacute;n de superficie ocular en quemaduras, LV Prasad Eye institute Hyderabad (India), 2017</p>
+<p>M&eacute;dico Adjunto servicio de c&oacute;rnea, Asociaci&oacute;n para evitar la ceguera en M&eacute;xico, 2019</p>
+                                </article>
+                            </div>
+                        </section>
+                </div>
+            </div>
+        </div-->
+        <br id="acerca-de">
+        <div class="container my-5" id="acerca-de">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card mb-3 gco-pad text-white shadow-lg rounded">
+                        <div class="row g-0">
+                          <div class="col-md-4 d-flex align-items-center border-end">
+                            <img class="w-100 p-2 rounded-circle" src="{% static 'img/Doctor.jpeg' %}" alt="Doctor">
+                          </div>
+                          <div class="col-md-8">
+                            <div class="card-body">
+                              <h1 class="card-title text-center border-bottom mt-1 mb-4">Perfil Médico</h1>
+                              <p class="card-text"><p>Estancia, Wills Eye Hospital Philadelphia, 2007</p>
+                              <p>C&oacute;rnea y cirug&iacute;a refractiva, UNAM/ Asociaci&oacute;n para evitar la Ceguera en M&eacute;xico, 2008</p>
+                              <p>Metodolog&iacute;a de la investigaci&oacute;n en Oftalmolog&iacute;a, UNAM/ Asociaci&oacute;n para evitar la Ceguera en M&eacute;xico, 2009</p>
+                              <p>Oftalmologia, UNAM/Hospital Ju&aacute;rez de M&eacute;xico, 2007</p>
+                              <p>Maestr&iacute;a en ciencias de la salud, IPN, 2011</p>
+                              <p>Entrenamiento en trasplantes lamelares, Devers Eye Institute Portland, 2010</p>
+                              <p>Fundador y Profesor titular del curso de alta especialidad en c&oacute;rnea y cirug&iacute;a refractiva, UNAM/Hospital Juarez de M&eacute;xico, 2017</p>
+                              <p>Mesa directiva, Centro Mexicano de C&oacute;rnea y Cirug&iacute;a refractiva, 2019</p>
+                              <p>Entrenamiento en reconstrucci&oacute;n de superficie ocular en quemaduras, LV Prasad Eye institute Hyderabad (India), 2017</p>
+                              <p>M&eacute;dico Adjunto servicio de c&oacute;rnea, Asociaci&oacute;n para evitar la ceguera en M&eacute;xico, 2019</p></p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+            </div>
+        </div>
+
+        <br id="Nosotros" class="">
+        <div class="container ">
+            <div class="text-center">
+                <h2 class="">Nosotros</h2>
+                <h3 class="text-muted mb-5">Lorem ipsum dolor sit amet consectetur.</h3>
+            </div>
+            <ul class="timeline">
+                <li>
+                    <div class="timeline-image"><img class="rounded-circle img-fluid" src="{% static 'img/1.png'%}" alt="..." /></div>
+                    <div class="timeline-panel">
+                        <div class="timeline-heading">
+                            <h4>Misión</h4>
+                            <h4 class="subheading">Lorem, ipsum.</h4>
+                        </div>
+                        <div class="timeline-body"><p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p></div>
+                    </div>
+                </li>
+                <li class="timeline-inverted">
+                    <div class="timeline-image"><img class="rounded-circle img-fluid" src="{% static 'img/2.png'%}" alt="..." /></div>
+                    <div class="timeline-panel">
+                        <div class="timeline-heading">
+                            <h4>Visión</h4>
+                            <h4 class="subheading">Lorem, ipsum.</h4>
+                        </div>
+                        <div class="timeline-body"><p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p></div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <br id="Servicios" class="">
+        <section class="gco-ser">
+            <div class="container py-5">
+                <div class="row justify-content-center">
+                    <div class="col-sm-12 col-lg-11">
+                        <div class="text-center mb-5">
+                            <h1 class="text-white">Servicios</h1>
+                        </div>
+                        <div class="card shadow-lg">
+                        <div class="d-flex align-items-start">
+                            <div class="nav flex-column nav-pills" id="v-pills-tab" style="background-color: #02839A;" role="tablist" aria-orientation="vertical">
+                              {%for i in serviciosquery%}
+                              <button class="nav-link fonts py-5 {%if forloop.counter0 == 0%}active{%endif%}"  id="v-pills-{{forloop.counter0}}-tab" data-bs-toggle="pill" data-bs-target="#v-pills-{{forloop.counter0}}" type="button" role="tab" aria-controls="v-pills-{{forloop.counter0}}" aria-selected="{%if forloop.counter0 == 0%}true{%else%}false{%endif%}">{{i.boton}}</button>
+                              {%endfor%}
+                            </div>
+                            <div class="tab-content m-2" id="v-pills-tabContent">
+                                {%for i in serviciosquery%}
+                                <div class="tab-pane fade show {%if forloop.counter0 == 0%}active{%endif%}" id="v-pills-{{forloop.counter0}}" role="tabpanel" aria-labelledby="v-pills-{{forloop.counter0}}">
+                                    <div class="text-center me-3">
+                                        <p class="display-5">{{i.titulo}}</p>
+                                        <img class="my-1 img-tab-w" style="border-color: black; border-style: solid;" src="{{i.imagen.url}}" alt="">
+                                        <p class="texto m-4" style="text-align: justify;">{{i.descripcion}}</p>
+                                        <a target="_blank" href="https://wa.me/525539992039" ><button type="button" class="btn btn-pgco">Agenda tu cita</button></a>
+                                    </div>
+                                </div>
+                                {%endfor%}
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <br class="mb-5" id="Equipo">
+        <div class="container" id="portfolio">
+            <div class="text-center mb-4">
+                <h2 class=" ">Equipo</h2>
+                <h3 class="text-muted">¡Cónoce los equipos que manejamos!</h3>
+            </div>
+            <div class="row">
+                {%for i in equipoquery%}
+                <div class="col-lg-3 col-sm-6 mb-4">
+                    <div class="portfolio-item" id="{{i.url}}1">
+                        <a class="portfolio-link" href="{{i.url}}">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid" src="{{i.imagen.url}}" alt="..." />
+                        </a>
+                        <div class="portfolio-caption">
+                            <div class=""><h4>{{i.titulo}}</h4></div>
+                            <div class="text-muted">{{i.descripcion}}</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal fade" id="{{i.url}}" tabindex="-1" aria-labelledby="{{i.titulo}}" aria-hidden="true">
+                    <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="{{i.titulo}}">{{i.titulo}}</h5>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="mx-2">
+                                {{i.articulo|safe}}
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                          <button type="button" class="btn btn-primary">Contactanos</button>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                {%endfor%}
+            </div>
+        </div>
+        <br class="" id="Padecimientos">
+        <section class="gco-pad py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="text-center text-white col-12 col-lg-4">
+                        <h4>Padecimientos</h4>
+                        <hr class="text-white">
+                        <div class="eyes">
+                            <div class="eye">
+                                <div class="ball">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-8 text-center">
+                        <div class="accordion" id="accordionExample">
+                            {%for i in padquery%}
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingOne">
+                                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#{{i.url}}" aria-expanded="true" aria-controls="{{i.url}}">
+                                      <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
+                                          <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z"/>
+                                          <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z"/>
+                                        </svg><strong class="ms-2">{{i.titulo}}</strong>
+                                  </button>
+                                </h2>
+                                <div id="{{i.url}}" class="accordion-collapse collapse" aria-labelledby="{{i.url}}1" data-bs-parent="#accordionExample">
+                                  <div class="accordion-body">
+                                    <div class="card">
+                                      <div class="card-img-top">
+                                          <img src="{{i.imagen.url}}" class="w-60" alt="">
+                                      </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <p class="card-text">
+                                            {{i.descripcion}}
+                                        </p>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            {%endfor%}
+                            <div class="accordion-item">
+                              <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
+                                        <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z"/>
+                                        <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z"/>
+                                      </svg><strong class="ms-2">Padecimiento 1</strong>
+                                </button>
+                              </h2>
+                              <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                  <div class="card">
+                                    <div class="card-img-top">
+                                        <img src="{% static 'img/portfolio-dummy.png' %}" class="w-60" alt="">
+                                    </div>
+                                  </div>
+                                  <div class="card-body">
+                                      <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste ipsa, excepturi odit amet enim cum.
+                                          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Culpa ea, at, nesciunt mollitia quasi obcaecati libero vero accusamus facilis beatae eius maxime
+                                          asperiores quo nostrum velit temporibus dolor, harum dignissimos exercitationem. Ipsam eligendi illo labore natus rem esse cupiditate.
+                                          Assumenda quae nobis deleniti ipsum fugiat sapiente nostrum ipsa quam incidunt.
+                                      </p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingTwo">
+                                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseOne">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
+                                        <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z"/>
+                                        <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z"/>
+                                      </svg><strong class="ms-2">Padecimiento 2</strong>
+                                  </button>
+                                </h2>
+                                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                  <div class="accordion-body">
+                                    <div class="card">
+                                      <div class="card-img-top">
+                                          <img src="{% static 'img/portfolio-dummy.png' %}" class="w-75" alt="">
+                                      </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste ipsa, excepturi odit amet enim cum.
+                                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Culpa ea, at, nesciunt mollitia quasi obcaecati libero vero accusamus facilis beatae eius maxime
+                                            asperiores quo nostrum velit temporibus dolor, harum dignissimos exercitationem. Ipsam eligendi illo labore natus rem esse cupiditate.
+                                            Assumenda quae nobis deleniti ipsum fugiat sapiente nostrum ipsa quam incidunt.
+                                        </p>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingThree">
+                                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
+                                        <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z"/>
+                                        <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z"/>
+                                      </svg><strong class="ms-2">Padecimiento 3</strong>
+                                  </button>
+                                </h2>
+                                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                  <div class="accordion-body">
+                                    <div class="card">
+                                      <div class="card-img-top">
+                                          <img src="{% static 'img/portfolio-dummy.png' %}" class="w-75" alt="">
+                                      </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste ipsa, excepturi odit amet enim cum.
+                                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Culpa ea, at, nesciunt mollitia quasi obcaecati libero vero accusamus facilis beatae eius maxime
+                                            asperiores quo nostrum velit temporibus dolor, harum dignissimos exercitationem. Ipsam eligendi illo labore natus rem esse cupiditate.
+                                            Assumenda quae nobis deleniti ipsum fugiat sapiente nostrum ipsa quam incidunt.
+                                        </p>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <br id="Cirugias" class="">
+        <div class="container">
+            <div class="row text-center">
+                <h2 class="my-5">Cirugias</h2>
+                <div class="item">
+                    <ul id="content-slider" class="content-slider">
+                        {%for i in cirugiasquery%}
+                        <li>
+                            <div class="card card-h text-center shadow" id="{{i.url}}1">
+                                <div class="card-img-top">
+                                    <img class="w-100" src="{{i.imagen.url}}" alt="">
+                                </div>
+                                <div class="card-body text-start">
+                                    <h5 class="card-title">{{i.titulo}}</h5>
+                                    <p class="card-text">{{i.descripcion|safe}}</p>
+                                    <a href="cirugias/{{i.url}}"><button type="button" class="btn btn-pgco">{{i.boton}}</button></a>
+                                </div>
+                            </div>
+                        </li>
+                        {%endfor%}
+                    </ul>
+                    {%for i in cirugiasquery%}
+                    <div class="modal fade" id="{{i.url}}" tabindex="-1" aria-labelledby="{{i.url}}" aria-hidden="true">
+                        <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="{{i.titulo}}">{{i.titulo}}</h5>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="mx-5 px-5">
+                                    {{i.articulo|safe}}
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                              <button type="button" class="btn btn-primary">Contactanos</button>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                    {%endfor%}
+                </div>
+            </div>
+        </div>
+        <br class="" id="contacto">
+    </main>
+    <!--div class="container" >
+        <div class="row">
+            <div class="col-12 col-lg-4">
+                <div class="text-center">
+                    <h2 >Contacto</h2>
+                </div>
+                <hr>
+                <div class="mt-4"></div>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab deleniti cumque quasi expedita labore eum illo dolor voluptatum repellat
+                 maxime ipsa impedit eveniet, soluta magni dolores nobis voluptatem facilis dolorum aliquam? Maxime aperiam quisquam dolores a esse vitae nihil fuga,
+                repellendus at voluptatem aspernatur tempore! Officia voluptatum ex rem minus.
+                <h3 class="mt-4">Teléfono</h3>
+                5555555555
+                <div class="my-4">
+                    <a target="_blank" href="https://wa.me/525555555555">
+                    <img src="img/Logo-whats.png" alt="" class="b1" width="8%">
+                    <button type="button" class="btn btn-success">Envia un mensaje</button></a>
+                </div>
+                <h3 class="mt-4">Dirección</h3>
+                <div class="mb-4">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quo, autem!
+                </div>
+
+            </div>
+            <div class="col-lg-4">
+                <div class="card my-2 shadow-lg">
+                    <div class="card-header text-center">
+                        <h3>Agenda tu cita</h3>
+                    </div>
+                    <div class="card-body">
+                        <form action="/" method="post">
+                            <label for="NombreForm" class="my-2">Escribe tu nombre</label>
+                            <div class="form-group d-flex">
+                                <input type="text" class="form-control me-1" name="NombreForm" id="NombreForm" placeholder="Nombre">
+                                <input type="text" class="form-control ms-1" name="ApellidoForm" id="ApellidoForm" placeholder="Apellidos">
+                            </div>
+                            <div class="form-group my-1">
+                                <label for="TelefonoForm" class="my-2">Escribe tu teléfono</label>
+                                <input type="number" class="form-control" name="TelefonoForm" id="TelefonoForm" placeholder="55">
+                            </div>
+                            <div class="form-group my-1">
+                                <label for="EmailForm" class="my-2">Escribe tu email</label>
+                                <input type="email" class="form-control" name="EmailForm" id="EmailForm" placeholder="correo@ejemplo.com">
+                            </div>
+                            <div class="form-check my-1">
+                                <input type="checkbox" class=" my-2 form-check-input" id="exampleCheck1">
+                                <label class="form-check-label" for="exampleCheck1">Acepto ser contactado por celular</label>
+                              </div>
+                              <div class="form-check my-1">
+                                <input type="checkbox" class=" my-2 form-check-input" id="TerminosForm">
+                                <label class="form-check-label" for="TerminosForm">Acepto los términos y condiciones</label>
+                              </div>
+                            <button type="submit" class="btn btn-pgco w-100 mt-3">Agenda tu cita</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-12 my-2">
+                <div class="card shadow-lg">
+                    <div class="card-body">
+                        <div class="mapouter"><div class="gmap_canvas"><iframe width=100% height=400px id="gmap_canvas" src="https://maps.google.com/maps?q=hospital%20espa%C3%B1ol&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><style>.mapouter{position:relative;text-align:right;height:100%;width:100%;}</style><style>.gmap_canvas {overflow:hidden;background:none!important;height:100%;width:100%;}</style></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div-->
+    <section class="ser-2-izq py-3">
+        <div class="container my-3">
+            <div class="row">
+                <div class="col-lg-6 col-12">
+                    <div class="card shadow-ga-lg mb-1 bg-gco-dark text-white">
+                        <div class="card-header text-center">
+                            <h3>Contacto</h3>
+                        </div>
+                        <div class="card-body">
+                            {% if cform == None %}
+                                {{text_chido}}
+                            {% else %}
+                            <form method="post" name="contact_form" >
+                                {% if alert == True %}
+                                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                    ¡Gracias por contactarnos! En la brevedad nos comunicaremos contigo.
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                </div>
+                                {% elif alert == False %}
+                                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                    ¡Algo salio mal! Intenta otra vez.
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                </div>
+                                {% endif %}
+                                {% csrf_token %}
+                                    <div class="user-box d-flex mb-1">
+                                        {{cform.Nombre}}
+                                        {{cform.Nombre.errors}}
+                                        {{cform.Apellidos}}
+                                    </div>
+                                    <div class="user-box my-1">
+                                        {{ cform.Email }}
+                                        {{ cform.Email.errors }}
+                                    </div>
+                                    <div class="user-box my-1">
+                                        {{ cform.Telefono }}
+                                        {{ cform.Telefono.errors }}
+                                    </div>
+                                    <div class="user-box my-1">
+                                        {{ cform.Mensaje }}
+                                        {{ cform.Mensaje.errors }}
+                                    </div>
+                                <div class="form-group text-center my-1">
+                                    <button type='submit' class='btn btn-pgco w-75 m-1'><i class="fas fa-envelope"></i> Enviar mensaje por correo</button>
+                                </div>
+                                <div class="text-center">
+                                    <button type='button' class='btn bg-whats w-75 m-1 text-white' onclick="ContactoviaWhats()"><i class="fab fa-whatsapp"></i> Enviar mensaje por WhatsApp</button>
+                                </div>
+                            </form>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-12">
+                    <div class="card shadow-lg mt-1">
+                        <iframe src="https://maps.google.com/maps?q=hospital%20espa%C3%B1ol&t=&z=15&ie=UTF8&iwloc=&output=embed" width="100%" height="600px" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                        <!--iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d119498.61133090078!2d-100.3774322877102!3d20.6153361906092!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d35b8fdc5b9255%3A0x97b094aa561b832f!2sSantiago%20de%20Quer%C3%A9taro%2C%20Qro.!5e0!3m2!1sen!2smx!4v1642457876603!5m2!1sen!2smx" width="100%" height="600px" style="border:0;" allowfullscreen="" loading="lazy"></iframe-->
+                        <!--iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.6631419822365!2d-99.11234298529746!3d19.42695534589571!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1feae5c60a6c5%3A0xf302c6ec5364d4a5!2sVenustiano%20Carranza%2C%20Ciudad%20de%20M%C3%A9xico%2C%20CDMX!5e0!3m2!1ses-419!2smx!4v1641565763448!5m2!1ses-419!2smx" width="100%" height="600px" style="border:0;" allowfullscreen="" loading="lazy"></iframe-->
+                    </div>
+                </div>
+            </div>
+        </div>
+        </section>
+        <script>
+            function ContactoviaWhats(){
+                var Nombre = document.contact_form.Nombre.value;
+                var Apellidos = document.contact_form.Apellidos.value;
+                var Mensaje = document.contact_form.Mensaje.value;
+                var url = "https://wa.me/525539992039?text="
+                window.open(url + "Hola, Mi nombre es "+Nombre+" "+Apellidos+" "+Mensaje)
+            }
+        </script>
+    <!--footer class="bg-gco-dark">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-lg-4">
+                    <div class="m-0 m-lg-5">
+                        <img src="{% static 'img/Logo-s.png'%}" class="w-100" alt="">
+                    </div>
+                    <div class="text-white m-2 justify-text">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae quibusdam et incidunt nulla. Animi, vel.
+                    </div>
+                    <div class="my-3 text-white">
+                        Teléfono: 5555555555
+                    </div>
+                    <div class="text-center text-lg-start">
+                        <a target="_blank" href="https://wa.me/525555555555" ><button type="button" class="btn btn-pgco">Envia un mensaje</button></a>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-4">
+                    <div class="text-center text-lg-start">
+                        <h2 class="text-white mt-4">Ubicación:</h2>
+                    </div>
+                    <hr class="text-white">
+                    <p class="text-white">Ejercito Nacional # 613, Granada, C.P. 11520 Ciudad de México. Tel. 5255 9600
+                    </p>
+                    <div class="mt-2 p-2 text-center">
+                        <button type="button" class="btn btn-info">Agenda tu cita</button>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-4">
+                    <div class="text-center text-lg-start">
+                        <h2 class="text-white mt-4 text-center">Redes Sociales:</h2>
+                    </div>
+                    <hr class="text-white">
+                    <ul class="text-white d-flex justify-content-center">
+                        <li class="mb-1 ms-4"><a href="#" class="RS p-1"><svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+                            <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
+                          </svg></a></li>
+                        <li class="mb-1 ms-4"><a href="#" class="RS p-1"><svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-twitter" viewBox="0 0 16 16">
+                            <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"/>
+                          </svg></a></li>
+                        <li class="mb-1 ms-4"><a href="#" class="RS p-1"><svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+                            <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/>
+                          </svg></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer-->
+    <footer class="bg-gco-dark text-white container-fluid footer-bg footes-font">
+        <div class="row p-5">
+            <div class="col-12 col-lg-3">
+                <div class="text-center">
+                    <h4 class="mt-4"><i class="fas fa-map-signs me-1"></i>Nos encontramos en:</h4>
+                    <hr class="">
+                <p class=""> Hospital Expañol </p>
+                <p class=""> Ejercito Nacional # 613, Granada, C.P. 11520 Ciudad de México. Tel. 5255 9600 </p>
+                </div>
+                <div class="text-center">
+                    <h4 class="mt-4"><i class="fas fa-clock me-1"></i>Horario</h4>
+                    <hr>
+                    <p>Lunes a Viernes de 09:00 a 18:00</p>
+                </div>
+            </div>
+            <div class="col-lg-1"></div>
+            <div class="col-12 col-lg-3">
+                <div class="m-0 my-lg-2 footer-logo text-center">
+                     <img class="w-100" src="{% static 'img/Logo-s.png'%}">
+                </div>
+                <div class="text-center my-4">
+                    Correo electrónico:
+                    <p>info@human-mexico.com</p>
+                </div>
+                <div class="text-center my-2">
+                    Teléfono: 553 999 2039
+                </div>
+                <div class="text-center">
+                    <i class="fab fa-whatsapp color-whats fs-2"></i>
+                    <a target="_blank" href="https://wa.me/525539992039">
+
+                        <button type="button" class="btn bg-whats text-white my-2">Envia un mensaje</button></a>
+                </div>
+            </div>
+            <div class="col-lg-1"></div>
+            <div class="col-12 col-lg-3">
+                <div class="text-center text-lg-start">
+                    <h4 class="mt-4 text-center">Siguenos en:</h4>
+                </div>
+                <hr class="">
+                <ul class="d-flex justify-content-center">
+                    <li class="mb-1 ms-4"><a href="https://www.facebook.com/Humanmexico/" class="p-1"><i class="RS fa-2x fab fa-facebook"></i></a></li>
+                    <li class="mb-1 ms-4"><a href="https://twitter.com/Human_Mex" class="p-1"><i class="RS fa-2x fab fa-instagram"></i></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="container-fluid mt-5">
+            <div class="row">
+                <hr class="text-white">
+                <div class="col-12 text-center mb-2 text-white" style="font-size: 10px;">
+                Todos los derechos reservados  | Desarrollada por NotHere Studios
+                </div>
+            </div>
+        </div>
+</footer>
+    <a href="https://www.facebook.com/Humanmexico/" class="float2 bg-facebook" style="bottom:370px;"> <i class="fab fa-facebook my-float2"></i> </a>
+    <a href="https://www.linkedin.com/company/human-m%C3%A9xico/" class="float2 bg-instagram" style="bottom:335px;"> <i class="fab fa-instagram my-float2"></i> </a>
+    <a href="https://wa.me/525539992039" style="bottom:300px;" class="float2 bg-whats"> <i class="fab fa-whatsapp my-float2"></i> </a>
+{%include 'index/floatbutton.html'%}
+    <script src="{% static 'js/bootstrap.bundle.js' %}"></script>
+    <script src="{% static 'js/jquery-3.6.0.min.js'%}"></script>
+    <script src="{% static 'js/lightslider.js' %}"></script>
+    <script src="{% static 'js/scripts.js' %}"></script>
+    <script src="{% static 'js/efectos.js' %}"></script>
+    <script src="{% static 'js/parallax.js' %}"></script>
+    <script>
+        $(document).ready(function() {
+           $("#content-slider").lightSlider({
+               item:4,
+               loop:true,
+               keyPress:true,
+               responsive: [
+               {
+                   breakpoint: 1000,
+                   settings: {
+                       item: 3,
+                       slideMove: 1,
+                       slideMargin: 6,
+                   }
+               },
+               {
+                   breakpoint: 768,
+                   settings: {
+                       item: 1,
+                       slideMove: 1
+                   }
+               }
+           ]
+           });
+       });
+   </script>
+   <script>
+    $(document).ready(function() {
+      $("#{{url}}").modal("show");
+      $('html, body').animate({
+      scrollTop: $("#Equipo").offset().top
+      }, 1);
+    });
+  </script>
+   <script>
+       var balls = document.getElementsByClassName("ball");
+       document.onmousemove = function(){
+           var x_int = event.clientX * 120 / window.innerWidth;
+           var x = event.clientX * 120 / window.innerWidth + "%";
+           var y = event.clientY * 100 / window.innerHeight + "%";
+           for(var i=0;i<1;i++){
+            if (x_int > 100){
+                x = "100%"
+            }
+                balls[i].style.left = x;
+                balls[i].style.top = y;
+                balls[i].style.transform = "translate(-"+x+",-"+y+")";
+       }
+       }
+
+   </script>
+</body>
+</html>
