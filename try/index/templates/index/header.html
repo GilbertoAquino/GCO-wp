@@ -1,11 +1,11 @@
 {% load static %}
-<header class="bg-gco-dark" id="Inicio">
+<header class="bg-gco-dark" id="Inicio" styles="z-index:99;">
     <nav class="navbar py-2 navbar-expand-lg navcolor navbar-dark" id="mainNav">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-4 col-sm-12">
-                    <a href="/" class="navbar-brand"><img src="{% static 'img/Logo-s-a.png' %}" id="imglogo" class="p-2 w-60" alt="" srcset=""></a> 
-                </div>    
+                    <a href="/" class="navbar-brand"><img src="{% static 'img/Logo-s-a.png' %}" id="imglogo" class="p-2 w-60" alt="" srcset=""></a>
+                </div>
             <button class="navbar-toggler"
             type="button"
             data-bs-toggle="collapse"
@@ -22,23 +22,37 @@
                 <li class="nav-item"><a href="/#Inicio" class="nav-link rounded-1 text-white">Inicio</a></li>
                 <li class="nav-item"><a href="/#Nosotros" class="nav-link rounded-1 text-white">Nosotros</a></li>
                 <li class="nav-item"><a href="/#Servicios" class="nav-link rounded-1 text-white">Servicio</a></li>
-                <li class="nav-item"><a href="/#Equipo" class="nav-link rounded-1 text-white">Equipo</a></li>
-                <li class="nav-item"><a href="/#Padecimientos" class="nav-link rounded-1 text-white">Padecimientos</a></li>
                 <li class="nav-item dropdown">
                     <div class="btn-group">
-                        <a href="/#Cirugias" class="nav-link rounded-1 text-white">Cirugias</a>
-                        <a href="#" class="nav-link dropdown-toggle dropdown-toggle-split text-white" 
-                        id="viajes" role="button" data-bs-toggle="dropdown" 
-                        aria-expanded="false"><span class="visually-hidden">Toggle Dropdown</span></a>
-                        <ul class="dropdown-menu">
+                        <a href="/#Cirugias" class="nav-link text-white">Cirugias</a>
+                        <a href="#" class="nav-link dropdown-toggle dropdown-toggle-split text-white"
+                        id="viajes" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false"><span class="visually-hidden" >Toggle Dropdown</span></a>
+                        <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end">
                             <li><p class="dropdown-item disabled">Conoce nuestras cirugías</p></li>
                             <li><hr class="dropdown-divider"></li>
                           {%for i in cirugiasquery%}
-                            <li><a class="dropdown-item" href="cirugias/{{i.url}}">- {{i.titulo}}</a></li>
+                            <li><a class="dropdown-item" href="cirugias/{{i.url}}">- {{i.titulo|safe}}</a></li>
                           {%endfor%}
                         </ul>
                       </div>
                 </li>
+                <li class="nav-item dropdown">
+                    <div class="btn-group">
+                        <a href="/#Padecimientos" class="nav-link text-white">Padecimientos</a>
+                        <a href="#" class="nav-link dropdown-toggle dropdown-toggle-split text-white"
+                        id="viajes" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false"><span class="visually-hidden" >Toggle Dropdown</span></a>
+                        <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-start">
+                            <li><p class="dropdown-item disabled">Conoce los padecimientos:</p></li>
+                            <li><hr class="dropdown-divider"></li>
+                          {%for i in padquery%}
+                            <li><a class="dropdown-item" href="padecimientos/{{i.url}}">- {{i.titulo|safe}}</a></li>
+                          {%endfor%}
+                        </ul>
+                      </div>
+                </li>
+                <li class="nav-item"><a href="/#Equipo" class="nav-link rounded-1 text-white">Equipo</a></li>
                 <!--li class="nav-item"><a href="#Cirugias" class="nav-link rounded-1 text-white">Cirugias</a></li-->
                 <li class="nav-item me-5"><a href="/#contacto" class="nav-link rounded-1 text-white">Contacto</a></li>
             </ul>

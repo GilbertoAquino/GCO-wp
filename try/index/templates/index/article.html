@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GCO</title>
-    <link rel="stylesheet" href="{% static 'css/bootstrap.css'%}">
+    <title>{{cirugia.titulo|safe}}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'css/GCO-bs.css'%}">
     <link rel="stylesheet" href="{% static 'css/lightslider.css' %}">
     <link rel="stylesheet" href="{% static 'css/acerca-de.css' %}">
@@ -14,14 +14,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
     <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" crossorigin="anonymous"></script>
     <style>
-        ul{
+        /*ul{
 			list-style: none outside none;
 		    padding-left: 0;
             margin: 0;
-		}
-        a{
-            text-decoration: none;
-        }
+		}*/
         .container-fluid-1{
             padding-left: 0rem;
             padding-right: 0rem;
@@ -43,7 +40,7 @@
                                     <div class="">
                                         <img src="{%static 'img/Logo-s-a-noname.png'%}" class="cwid" alt="">
                                     </div>
-                                    <h1 class="titlebg">{{cirugia.titulo}}</h1>
+                                    <h1 class="titlebg">{{cirugia.titulo|safe}}</h1>
                                     <a href="#contacto"><button class="btn btn-pgco hid">¡Agenda tu cita!</button></a>
                                 </div>
                           </div>
@@ -51,22 +48,28 @@
                 </div>
             </div>
         </div>
-        <article class="mb-4">
+        <article class="">
             <div class="container px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
-                    <div class="col-md-10 col-lg-8 col-xl-7">
-                        <p>
+                    <div class="col-md-10 col-lg-8 col-xl-7 mt-5">
+                        <div class="article-link">
                             {{cirugia.articulo|safe}}
-                        </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-12 mt-5" >
+                        <div style="height:100px">
+                            <a id="zl-url" class="zl-url" href="https://www.doctoralia.com.mx/carlos-enrique-de-la-torre-gonzalez/oftalmologo/miguel-hidalgo" rel="nofollow" data-zlw-doctor="carlos-enrique-de-la-torre-gonzalez" data-zlw-type="big_with_calendar" data-zlw-opinion="true" data-zlw-hide-branding="true">Carlos Enrique De La Torre Gonzalez - Doctoralia.com.mx</a><script>!function($_x,_s,id){var js,fjs=$_x.getElementsByTagName(_s)[0];if(!$_x.getElementById(id)){js = $_x.createElement(_s);js.id = id;js.src = "//platform.docplanner.com/js/widget.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","zl-widget-s");</script>
+                        </div>
                     </div>
                 </div>
             </div>
         </article>
-        <div class="container">
+        <div class="container" style="">
             <div class="row text-center">
-                <h2 class="my-5">¡Conoce más sobre nuestras cirugías!</h2>
+                <h2 class="my-5">{{tc}}</h2>
                 <div class="item">
                     <ul id="content-slider" class="content-slider">
+                        {%if dinamicurl == "cirugias"%}
                         {%for i in cirugiasquery%}
                         <li>
                             <div class="card card-h text-center shadow" id="{{i.url}}1">
@@ -74,41 +77,36 @@
                                     <img class="w-100" src="{{i.imagen.url}}" alt="">
                                 </div>
                                 <div class="card-body text-start">
-                                    <h5 class="card-title">{{i.titulo}}</h5>
-                                    <p class="card-text">{{i.descripcion|safe}}</p>
-                                    <a href="cirugias/{{i.url}}"><button type="button" class="btn btn-pgco">{{i.boton}}</button></a>
+                                    <h5 class="card-title">{{i.titulo|safe}}</h5>
+                                    <p class="card-text" style="font-size: 16px;">{{i.descripcion|safe}}</p>
+                                    <a href="{{dinamicurl}}/{{i.url}}"><button type="button" class="btn btn-pgco">Ir al artículo</button></a>
                                 </div>
                             </div>
                         </li>
                         {%endfor%}
-                    </ul>
-                    {%for i in cirugiasquery%}
-                    <div class="modal fade" id="{{i.url}}" tabindex="-1" aria-labelledby="{{i.url}}" aria-hidden="true">
-                        <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
-                          <div class="modal-content">
-                            <div class="modal-header">
-                              <h5 class="modal-title" id="{{i.titulo}}">{{i.titulo}}</h5>
-                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                <div class="mx-5 px-5">
-                                    {{i.articulo|safe}}
+                        {%else%}
+                        {%for i in padquery%}
+                        <li>
+                            <div class="card card-h text-center shadow" id="{{i.url}}1">
+                                <div class="card-img-top">
+                                    <img class="w-100" src="{{i.imagen.url}}" alt="">
+                                </div>
+                                <div class="card-body text-start">
+                                    <h5 class="card-title">{{i.titulo|safe}}</h5>
+                                    <p class="card-text" style="font-size: 16px;">{{i.descripcion|safe}}</p>
+                                    <a href="{{dinamicurl}}/{{i.url}}"><button type="button" class="btn btn-pgco">Ir al artículo</button></a>
                                 </div>
                             </div>
-                            <div class="modal-footer">
-                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                              <button type="button" class="btn btn-primary">Contactanos</button>
-                            </div>
-                          </div>
-                        </div>
-                    </div>
-                    {%endfor%}
+                        </li>
+                        {%endfor%}
+                        {%endif%}
+                    </ul>
                 </div>
             </div>
         </div>
     </main>
     <footer class="bg-gco-dark text-white container-fluid footer-bg footes-font">
-        <div class="row p-5">
+        <div class="row pt-5">
             <div class="col-12 col-lg-3">
                 <div class="text-center">
                     <h4 class="mt-4"><i class="fas fa-map-signs me-1"></i>Nos encontramos en:</h4>
@@ -129,16 +127,12 @@
                 </div>
                 <div class="text-center my-4">
                     Correo electrónico:
-                    <p>info@human-mexico.com</p>
+                    <p>dr.cirujano.oftalmologo@gmail.com</p>
                 </div>
                 <div class="text-center my-2">
-                    Teléfono: 442 272 5661
-                </div>
-                <div class="text-center">
-                    <i class="fab fa-whatsapp color-whats fs-2"></i>
-                    <a target="_blank" href="https://wa.me/524422725661">
-                        
-                        <button type="button" class="btn bg-whats text-white my-2">Envia un mensaje</button></a>
+                    <p>Teléfonos:</p>
+                    <p>555 604 3976 / 555 254 2417</p>
+                    <p>555 586 8878</p>
                 </div>
             </div>
             <div class="col-lg-1"></div>
@@ -147,14 +141,20 @@
                     <h4 class="mt-4 text-center">Siguenos en:</h4>
                 </div>
                 <hr class="">
-                <ul class="d-flex justify-content-center">
-                    <li class="mb-1 ms-4"><a href="https://www.facebook.com/Humanmexico/" class="p-1"><i class="RS fa-3x fab fa-facebook"></i></a></li>
-                    <li class="mb-1 ms-4"><a href="https://www.linkedin.com/company/human-m%C3%A9xico/" class="p-1"><i class="RS fa-3x fab fa-linkedin"></i></a></li>
-                    <li class="mb-1 ms-4"><a href="https://twitter.com/Human_Mex" class="p-1"><i class="RS fa-3x fab fa-twitter"></i></a></li>
+                <ul class="text-center" style='list-style: none outside none;padding-left: 0;margin: 0;'>
+                    <li class="mb-1 ms-4"><a href="https://www.facebook.com/GCorneaYOftalmologia" class="p-1"><i class="RS fa-2x fab fa-facebook"></i></a></li>
+                    <!--li class="mb-1 ms-4"><a href="#" class="p-1"><i class="RS fa-2x fab fa-instagram"></i></a></li-->
                 </ul>
+                <div class="text-center mt-4">
+                    <a target="_blank" href="https://wa.me/525539992039">
+                        <button type="button" class="btn bg-whats text-white"><i class="fab fa-whatsapp fs-5"></i>&nbspEnviar mensaje</button>
+                    </a>
+                    <br>
+                    <a href="https://www.doctoralia.com.mx/carlos-enrique-de-la-torre-gonzalez/oftalmologo/miguel-hidalgo?utm_source=widget-doctor-124156&utm_medium=certificate&utm_campaign=&utm_content=#highlight-calendar"><button class="btn btn-pgco hid">Agendar cita</button></a>
+                </div>
             </div>
         </div>
-        <div class="container-fluid">
+        <div class="container-fluid mt-5">
             <div class="row">
                 <hr class="text-white">
                 <div class="col-12 text-center mb-2 text-white" style="font-size: 10px;">
@@ -164,11 +164,21 @@
         </div>
 </footer>
     <a href="https://www.facebook.com/GCorneaYOftalmologia" class="float2 bg-facebook" style="bottom:370px;"> <i class="fab fa-facebook my-float2"></i> </a>
-    <a href="https://www.linkedin.com/company/human-m%C3%A9xico/" class="float2 bg-instagram" style="bottom:335px;"> <i class="fab fa-instagram my-float2"></i> </a>
+    <a href="https://www.doctoralia.com.mx/carlos-enrique-de-la-torre-gonzalez/oftalmologo/miguel-hidalgo" class="float2" style="bottom:335px;"><img class="w-100" src="{%static 'img/doctoralia-icon.jpg'%}"></a>
     <a href="https://wa.me/524422725661" style="bottom:300px;" class="float2 bg-whats"> <i class="fab fa-whatsapp my-float2"></i> </a>
 {%include 'index/floatbutton.html'%}
-    <script src="{% static 'js/bootstrap.bundle.js' %}"></script>
-    <script type='text/javascript' src="{% static 'js/jquery-3.6.0.min.js'%}"></script>
+    <script src="{% static 'js/jquery-3.6.0.min.js'%}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script>
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+      return new bootstrap.Tooltip(tooltipTriggerEl)
+    })
+    var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+    var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+      return new bootstrap.Popover(popoverTriggerEl)
+    })
+    </script>
     <script src="{% static 'js/lightslider.js' %}"></script>
     <script src="{% static 'js/scripts.js' %}"></script>
     <script src="{% static 'js/parallax.js' %}"></script>

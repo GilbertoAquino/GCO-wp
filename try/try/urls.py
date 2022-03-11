@@ -17,8 +17,16 @@ from django.conf.urls import url, include
 from django.contrib import admin
 from django.conf.urls.static import static
 from . import settings
+from index.views import *
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'',include("index.urls"))
+    url("cirugias/cirugias/(?P<url>.*)$",redirects),
+    url("padecimientos/padecimientos/(?P<url>.*)$",redirects),
+    url("padecimientos/cirugias/(?P<url>.*)$",redirects),
+    url("cirugias/padecimientos/(?P<url>.*)$",redirects),
+    url(r"^cirugias/(?P<url>.*)$",cirugias_blog.as_view(),name="cirugias_bg"),
+    url(r"^padecimientos/(?P<url>.*)$",pad_blog.as_view(),name="pad_bg"),
+    url(r"(?P<url>.*)$",index.as_view()),
+    url(r'^$',index.as_view()),
 ] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

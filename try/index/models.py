@@ -37,6 +37,7 @@ class Padecimientos(models.Model):
     imagen = models.ImageField(upload_to="img")
     titulo = models.CharField(max_length=25)
     descripcion = models.CharField(max_length=600,default="Escribe un texto...")
+    articulo = models.TextField(default="Escribe un articulo...")
     url = models.SlugField(default="None")
 
     def __str__(self):

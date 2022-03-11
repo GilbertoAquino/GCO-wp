@@ -1,11 +1,15 @@
 {%load static%}
-<a class="float" id="floatbtn" onclick="myfunction()">
-    <i id="iconfab" class="fas fa-angle-double-up my-float"></i>
+<a class="float" id="floatbtn" onclick="myfunction()" data-bs-toggle="popover" data-bs-trigger="hover" data-bs-content="¡Agenda un cita en Doctoralia!">
+    <i class="my-float fas fa-star"></i>
 </a>
-<div class="intento" id="#intento2">
-    <h2 class="text-white">Aqui el widget de doctoralia para que los usuarios reserven.</h2>
-    <img class="w-100" src="{%static 'img/intentowidget.png'%}">
+<div class="intento" style="visibility=visible;" id="#intento2">
+    <a id="zl-url" class="zl-url" href="https://www.doctoralia.com.mx/carlos-enrique-de-la-torre-gonzalez/oftalmologo/miguel-hidalgo" rel="nofollow" data-zlw-doctor="carlos-enrique-de-la-torre-gonzalez" data-zlw-type="big" data-zlw-opinion="true" data-zlw-hide-branding="true">Carlos Enrique De La Torre Gonzalez - Doctoralia.com.mx</a><script>!function($_x,_s,id){var js,fjs=$_x.getElementsByTagName(_s)[0];if(!$_x.getElementById(id)){js = $_x.createElement(_s);js.id = id;js.src = "//platform.docplanner.com/js/widget.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","zl-widget-s");</script>
 </div>
+<script>
+    $(document).ready(function(){
+      $('[data-toggle="popover"]').popover();
+    });
+    </script>
 <script>
     function myfunction(){
         var hola = document.getElementsByClassName("intento")[0];
@@ -13,20 +17,20 @@
         var btn = document.body.querySelector("#floatbtn");
         if(hola.style.visibility==""){
             hola.style.visibility="visible";
-            icon.classList.remove("fa-angle-double-up");
-            icon.classList.add("fa-angle-double-down");
+            //icon.classList.remove("fa-angle-double-up");
+            //icon.classList.add("fa-angle-double-down");
             btn.style.background="#F7CC41";
         }
         else if (hola.style.visibility=="visible"){
             hola.style.visibility="hidden";
-            icon.classList.add("fa-angle-double-up");
-            icon.classList.remove("fa-angle-double-down");
+            //icon.classList.add("fa-angle-double-up");
+            //icon.classList.remove("fa-angle-double-down");
             btn.style.background="#02839A";
         }
         else if (hola.style.visibility="hidden"){
             hola.style.visibility="visible";
-            icon.classList.remove("fa-angle-double-up");
-            icon.classList.add("fa-angle-double-down");
+            //icon.classList.remove("fa-angle-double-up");
+            //icon.classList.add("fa-angle-double-down");
             btn.style.background="#F7CC41";
         }
     };

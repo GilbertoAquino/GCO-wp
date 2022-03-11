@@ -25,7 +25,7 @@ SECRET_KEY = 'avcwpjac*k=23$!7jd=4q&kg%pcrktb1m@l6k#!926kr41p!4^'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["batserver.local","192.168.1.232"]
+ALLOWED_HOSTS = ["batserver.local","192.168.1.232","gilbertoaquino97.pythonanywhere.com","www.gcorneayoftalmologia.mx"]
 
 
 # Application definition
@@ -122,7 +122,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static"),
 )
-#STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 #DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 MEDIA_ROOT = os.path.join(BASE_DIR, "img")
 MEDIA_URL = "/media-upload/"
