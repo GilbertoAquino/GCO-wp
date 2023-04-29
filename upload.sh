@@ -7,4 +7,4 @@ ls
 cd www.gcorneayoftalmologia.mx
 ls
 bye
-_EOF_
+<<- _EOF_
