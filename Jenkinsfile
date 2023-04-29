@@ -22,7 +22,7 @@ pipeline {
                     sh 'chmod +x ./upload.sh'
                     sh """
                         #!/bin/bash
-                        ftp -n -v ${HOST} << EOT ||
+                        ftp -n -v ${HOST} << EOT
                         ascii
                         user ${USER} ${PASSWORD}
                         ls
