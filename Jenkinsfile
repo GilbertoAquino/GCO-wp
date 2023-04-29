@@ -20,17 +20,14 @@ pipeline {
                             ls
                          '''
                     sh 'chmod +x ./upload.sh'
-                    sh """
-                        #!/bin/bash
-                        ftp -n -v ${HOST} <<EOT
-                        ascii
+                    sh '''#!/bin/bash
+                        ftp -n -v ${HOST} <<- _EOF_ ||
                         user ${USER} ${PASSWORD}
-                        lls
                         ls
                         cd www.gcorneayoftalmologia.mx
                         ls
                         bye
-                        EOT"""
+                        _EOF_'''
                 }
             }
         }
