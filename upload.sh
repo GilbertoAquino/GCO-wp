@@ -1,12 +1,11 @@
+#!/bin/bash
 USER="jenkins-nhs@gcorneayoftalmologia.mx"
 PASSWORD="H*pmt{jz~(2D"
 HOST="www.gcorneayoftalmologia.mx"
-ftp -n -v ${HOST} <<EOT
-ascii
+ftp -n -v ${HOST} <<-_EOF_
 user ${USER} ${PASSWORD}
-lls
 ls
 cd www.gcorneayoftalmologia.mx
 ls
 bye
-EOT
+_EOF_
