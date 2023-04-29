@@ -21,14 +21,14 @@ pipeline {
                          '''
                     sh 'chmod +x ./upload.sh'
                     sh """
-                        ftp -inv ${HOST} <<- _EOF_
+                        #!/bin/bash
+                        ftp -inv ${HOST} <<- _EOF_ ||
                         user ${USER} ${PASSWORD}
-                        ls
+                        ftp operations (ex. ls)
                         cd www.gcorneayoftalmologia.mx
                         ls
                         bye
-                        _EOF_
-                    """
+                        _EOF_"""
                 }
             }
         }
