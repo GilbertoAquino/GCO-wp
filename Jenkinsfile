@@ -21,7 +21,7 @@ pipeline {
                          '''
                     sh 'chmod +x ./upload.sh'
                     sh '''#!/bin/bash
-                        ftp -n -v ${HOST} <<- _EOF_ ||
+                        ftp -n -v ${HOST} <<- _EOF_
                         user ${USER} ${PASSWORD}
                         ls
                         cd www.gcorneayoftalmologia.mx
