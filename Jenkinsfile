@@ -16,6 +16,7 @@ pipeline {
                     sh '''#!/bin/bash
                             ls
                          '''
+                    sh 'chmod +x ./upload.sh'
                     sh "./upload.sh"
                 }
             }
