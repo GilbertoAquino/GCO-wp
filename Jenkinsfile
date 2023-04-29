@@ -13,7 +13,10 @@ pipeline {
                 echo "Test how to run a sh file"
                 echo "hello world"
                 script{
-                    bat(script: "dir")
+                    sh '''#!/bin/bash
+                            ls
+                         '''
+                    sh "./upload.sh"
                 }
             }
         }
