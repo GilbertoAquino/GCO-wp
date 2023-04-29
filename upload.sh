@@ -5,6 +5,7 @@ HOST="www.gcorneayoftalmologia.mx"
 ftp -n -v ${HOST} <<-_EOF_
 user ${USER} ${PASSWORD}
 ls
+lls
 cd www.gcorneayoftalmologia.mx
 ls
 bye
